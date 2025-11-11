@@ -21,7 +21,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: 'Century Gothic', 'CenturyGothic', AppleGothic, sans-serif;
             line-height: 1.6;
             color: var(--dark);
             background: var(--white);
@@ -64,6 +64,7 @@
             cursor: pointer;
             padding: 0.5rem 1rem;
             transition: color 0.3s;
+            font-family: 'Century Gothic', sans-serif;
         }
         
         .header-nav button:hover {
@@ -86,7 +87,7 @@
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
-            font-weight: 800;
+            font-weight: 700;
         }
         
         .hero p {
@@ -337,7 +338,7 @@
         
         .impact-item .value {
             font-size: 2.5rem;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 0.5rem;
         }
         
@@ -357,12 +358,30 @@
             background: var(--light);
             padding: 2rem;
             border-radius: 10px;
+            position: relative;
         }
         
         .summary-card h3 {
             font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             color: var(--dark);
+        }
+        
+        .edit-btn {
+            display: inline-block;
+            background: none;
+            border: none;
+            color: var(--primary);
+            font-size: 0.9rem;
+            cursor: pointer;
+            padding: 0.25rem 0.5rem;
+            transition: color 0.3s;
+            font-family: 'Century Gothic', sans-serif;
+            text-decoration: underline;
+        }
+        
+        .edit-btn:hover {
+            color: #004c99;
         }
         
         .summary-item {
@@ -385,26 +404,6 @@
             color: var(--gray);
         }
         
-        .total-investment {
-            background: var(--primary);
-            color: var(--white);
-            padding: 2rem;
-            border-radius: 10px;
-            text-align: center;
-            margin-top: 2rem;
-        }
-        
-        .total-investment .amount {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-        
-        .total-investment .period {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-        
         .button-group {
             display: flex;
             gap: 1rem;
@@ -420,6 +419,7 @@
             cursor: pointer;
             transition: all 0.3s;
             border: none;
+            font-family: 'Century Gothic', sans-serif;
         }
         
         .btn-primary {
@@ -470,7 +470,7 @@
             background: var(--white);
             padding: 3rem;
             border-radius: 10px;
-            max-width: 800px;
+            max-width: 600px;
             width: 90%;
             max-height: 80vh;
             overflow-y: auto;
@@ -488,6 +488,23 @@
         
         .modal-close:hover {
             color: var(--dark);
+        }
+        
+        .offer-modal h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .offer-modal p {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .offer-modal .btn {
+            width: 100%;
         }
         
         .reports-grid {
@@ -530,6 +547,7 @@
             border-radius: 5px;
             cursor: pointer;
             font-weight: 600;
+            font-family: 'Century Gothic', sans-serif;
         }
         
         .report-card button:hover {
@@ -643,6 +661,14 @@
             .header-nav {
                 display: none;
             }
+            
+            .modal-content {
+                padding: 2rem;
+            }
+            
+            .offer-modal h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -718,44 +744,44 @@
                 </div>
             </div>
             
-            <!-- Step 3: Build Solution -->
+            <!-- Step 3: Timeline -->
             <div class="step" id="step3">
                 <div class="step-header">
                     <div class="step-number">3</div>
-                    <h2 class="step-title">Build Your Solution</h2>
-                    <p class="step-subtitle">Configure time and budget (faster delivery = premium pricing)</p>
+                    <h2 class="step-title">Configure Timeline</h2>
+                    <p class="step-subtitle">When do you want to start and when do you need delivery?</p>
                 </div>
                 
                 <div class="slider-container">
                     <div class="slider-group">
                         <div class="slider-label">
-                            <span>Timeline</span>
-                            <span class="slider-value" id="timeValue">12 weeks</span>
+                            <span>How soon do you want to start?</span>
+                            <span class="slider-value" id="startValue">2 weeks</span>
                         </div>
-                        <input type="range" id="timeSlider" min="4" max="24" value="12" step="2">
+                        <input type="range" id="startSlider" min="1" max="12" value="2" step="1">
                         <div class="slider-markers">
-                            <span>4 weeks<br><small>(Rush)</small></span>
-                            <span>12 weeks<br><small>(Standard)</small></span>
-                            <span>24 weeks<br><small>(Extended)</small></span>
+                            <span>Immediately</span>
+                            <span>1 month</span>
+                            <span>3 months</span>
                         </div>
                     </div>
                     
                     <div class="slider-group">
                         <div class="slider-label">
-                            <span>Budget</span>
-                            <span class="slider-value" id="budgetValue">£75,000</span>
+                            <span>When do you need the work delivered by?</span>
+                            <span class="slider-value" id="deliveryValue">12 weeks</span>
                         </div>
-                        <input type="range" id="budgetSlider" min="25000" max="250000" value="75000" step="5000">
+                        <input type="range" id="deliverySlider" min="4" max="24" value="12" step="2">
                         <div class="slider-markers">
-                            <span>£25k<br><small>(Focused)</small></span>
-                            <span>£75k<br><small>(Standard)</small></span>
-                            <span>£250k<br><small>(Comprehensive)</small></span>
+                            <span>1 month</span>
+                            <span>3 months</span>
+                            <span>6 months</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="impact-preview">
-                    <h3>Projected Impact with Platten</h3>
+                    <h3>Your Configuration Summary</h3>
                     <div class="impact-grid" id="impactGrid"></div>
                 </div>
                 
@@ -769,25 +795,27 @@
             <div class="step" id="step4">
                 <div class="step-header">
                     <div class="step-number">4</div>
-                    <h2 class="step-title">Review & Book</h2>
-                    <p class="step-subtitle">Confirm configuration and schedule your strategy call</p>
+                    <h2 class="step-title">Review & Book Your Call</h2>
+                    <p class="step-subtitle">Review your configuration and schedule your strategy call</p>
                 </div>
                 
                 <div class="summary-grid">
                     <div class="summary-card">
-                        <h3>Your Configuration</h3>
-                        <div id="configSummary"></div>
+                        <h3>Support Areas <button class="edit-btn" onclick="jumpToStep(1)">Edit</button></h3>
+                        <div id="areasSummary"></div>
                     </div>
                     
                     <div class="summary-card">
-                        <h3>Expected Outcomes</h3>
-                        <div id="outcomesSummary"></div>
+                        <h3>Desired Goals <button class="edit-btn" onclick="jumpToStep(2)">Edit</button></h3>
+                        <div id="goalsSummary"></div>
                     </div>
                 </div>
                 
-                <div class="total-investment">
-                    <div class="amount" id="totalAmount">£75,000</div>
-                    <div class="period" id="totalPeriod">Over 12 weeks</div>
+                <div style="margin-top: 2rem;">
+                    <div class="summary-card">
+                        <h3>Timeline <button class="edit-btn" onclick="jumpToStep(3)">Edit</button></h3>
+                        <div id="timelineSummary"></div>
+                    </div>
                 </div>
                 
                 <div style="margin-top: 3rem;">
@@ -841,6 +869,21 @@
         </div>
     </section>
 
+    <!-- Welcome Offer Modal -->
+    <div class="modal active" id="offerModal">
+        <div class="modal-content offer-modal">
+            <span class="modal-close" onclick="closeOfferModal()">×</span>
+            <h2>Download Our Alt-McKinsey Report</h2>
+            <p>Exclusive insights for VCs and startup/growth CEOs on building AI capability without the £500k consultancy bill.</p>
+            <p><strong>What's inside:</strong><br>
+            ✓ Build vs Buy decision framework<br>
+            ✓ AI governance that passes due diligence<br>
+            ✓ Real cost comparisons: Fractional vs Full-time vs Consultancy</p>
+            <button class="btn btn-primary" onclick="downloadOffer()">Download Free Report</button>
+            <button class="btn btn-secondary" onclick="closeOfferModal()" style="margin-top: 1rem;">Continue to Configurator</button>
+        </div>
+    </div>
+
     <!-- Reports Modal -->
     <div class="modal" id="reportsModal">
         <div class="modal-content">
@@ -883,8 +926,8 @@
             currentStep: 1,
             selectedAreas: [],
             selectedGoals: [],
-            timeline: 12,
-            budget: 75000
+            startWeeks: 2,
+            deliveryWeeks: 12
         };
 
         const goalsDatabase = {
@@ -933,6 +976,12 @@
                     const goalCard = document.createElement('div');
                     goalCard.className = 'goal-card';
                     goalCard.dataset.goalId = goal.id;
+                    
+                    // Check if this goal was already selected
+                    if (state.selectedGoals.find(g => g.id === goal.id)) {
+                        goalCard.classList.add('selected');
+                    }
+                    
                     goalCard.innerHTML = `
                         <h4>${goal.title}</h4>
                         <p>${goal.desc}</p>
@@ -942,7 +991,9 @@
                         const goalId = this.dataset.goalId;
                         
                         if (this.classList.contains('selected')) {
-                            state.selectedGoals.push(goal);
+                            if (!state.selectedGoals.find(g => g.id === goalId)) {
+                                state.selectedGoals.push(goal);
+                            }
                         } else {
                             state.selectedGoals = state.selectedGoals.filter(g => g.id !== goalId);
                         }
@@ -952,65 +1003,57 @@
                     goalsGrid.appendChild(goalCard);
                 });
             });
+            
+            document.getElementById('step2Next').disabled = state.selectedGoals.length === 0;
         }
 
-        const timeSlider = document.getElementById('timeSlider');
-        const budgetSlider = document.getElementById('budgetSlider');
-        const timeValue = document.getElementById('timeValue');
-        const budgetValue = document.getElementById('budgetValue');
+        const startSlider = document.getElementById('startSlider');
+        const deliverySlider = document.getElementById('deliverySlider');
+        const startValue = document.getElementById('startValue');
+        const deliveryValue = document.getElementById('deliveryValue');
 
-        timeSlider.addEventListener('input', function() {
-            state.timeline = parseInt(this.value);
-            timeValue.textContent = `${state.timeline} weeks`;
-            
-            // Faster = higher cost
-            if (state.timeline <= 8) {
-                const minBudget = 75000;
-                if (state.budget < minBudget) {
-                    state.budget = minBudget;
-                    budgetSlider.value = minBudget;
-                    budgetValue.textContent = `£${(state.budget/1000).toFixed(0)}k`;
-                }
-            }
-            
+        startSlider.addEventListener('input', function() {
+            state.startWeeks = parseInt(this.value);
+            startValue.textContent = state.startWeeks === 1 ? 'Immediately' : `${state.startWeeks} weeks`;
             updateImpact();
         });
 
-        budgetSlider.addEventListener('input', function() {
-            state.budget = parseInt(this.value);
-            budgetValue.textContent = `£${(state.budget/1000).toFixed(0)}k`;
+        deliverySlider.addEventListener('input', function() {
+            state.deliveryWeeks = parseInt(this.value);
+            deliveryValue.textContent = `${state.deliveryWeeks} weeks`;
             updateImpact();
         });
 
         function updateImpact() {
             const impactGrid = document.getElementById('impactGrid');
             
-            const speedMultiplier = state.timeline <= 8 ? 'Rapid' : state.timeline <= 16 ? 'Standard' : 'Extended';
-            const scopeLevel = state.budget < 50000 ? 'Focused' : state.budget < 150000 ? 'Comprehensive' : 'Enterprise';
+            const urgency = state.startWeeks === 1 ? 'Immediate' : state.startWeeks <= 4 ? 'Urgent' : 'Standard';
+            const timeline = state.deliveryWeeks <= 8 ? 'Fast Track' : state.deliveryWeeks <= 16 ? 'Standard' : 'Extended';
             
             impactGrid.innerHTML = `
                 <div class="impact-item">
-                    <div class="value">${state.timeline}w</div>
-                    <div class="label">Time to Value</div>
+                    <div class="value">${state.startWeeks === 1 ? 'Now' : state.startWeeks + 'w'}</div>
+                    <div class="label">Start Date</div>
                 </div>
                 <div class="impact-item">
-                    <div class="value">${speedMultiplier}</div>
-                    <div class="label">Delivery Speed</div>
+                    <div class="value">${state.deliveryWeeks}w</div>
+                    <div class="label">Delivery</div>
                 </div>
                 <div class="impact-item">
-                    <div class="value">${scopeLevel}</div>
-                    <div class="label">Scope Level</div>
+                    <div class="value">${urgency}</div>
+                    <div class="label">Priority</div>
                 </div>
                 <div class="impact-item">
                     <div class="value">${state.selectedGoals.length}</div>
-                    <div class="label">Goals Achieved</div>
+                    <div class="label">Goals</div>
                 </div>
             `;
         }
 
         function generateSummary() {
-            const configSummary = document.getElementById('configSummary');
-            const outcomesSummary = document.getElementById('outcomesSummary');
+            const areasSummary = document.getElementById('areasSummary');
+            const goalsSummary = document.getElementById('goalsSummary');
+            const timelineSummary = document.getElementById('timelineSummary');
             
             const areaNames = {
                 governance: 'AI Governance & Compliance',
@@ -1018,40 +1061,41 @@
                 'virtual-cao': 'Virtual Chief AI Officer'
             };
             
-            let configHTML = '';
+            // Areas
+            let areasHTML = '';
             state.selectedAreas.forEach(area => {
-                configHTML += `
+                areasHTML += `
                     <div class="summary-item">
                         <span class="label">${areaNames[area]}</span>
                         <span class="value">✓</span>
                     </div>
                 `;
             });
-            configHTML += `
-                <div class="summary-item">
-                    <span class="label">Timeline</span>
-                    <span class="value">${state.timeline} weeks</span>
-                </div>
-                <div class="summary-item">
-                    <span class="label">Budget</span>
-                    <span class="value">£${(state.budget/1000).toFixed(0)}k</span>
-                </div>
-            `;
-            configSummary.innerHTML = configHTML;
+            areasSummary.innerHTML = areasHTML;
             
-            let outcomesHTML = '';
+            // Goals
+            let goalsHTML = '';
             state.selectedGoals.forEach(goal => {
-                outcomesHTML += `
+                goalsHTML += `
                     <div class="summary-item">
                         <span class="label">${goal.title}</span>
                         <span class="value">✓</span>
                     </div>
                 `;
             });
-            outcomesSummary.innerHTML = outcomesHTML;
+            goalsSummary.innerHTML = goalsHTML;
             
-            document.getElementById('totalAmount').textContent = `£${(state.budget/1000).toFixed(0)}k`;
-            document.getElementById('totalPeriod').textContent = `Over ${state.timeline} weeks`;
+            // Timeline
+            timelineSummary.innerHTML = `
+                <div class="summary-item">
+                    <span class="label">Start</span>
+                    <span class="value">${state.startWeeks === 1 ? 'Immediately' : state.startWeeks + ' weeks'}</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Delivery</span>
+                    <span class="value">${state.deliveryWeeks} weeks</span>
+                </div>
+            `;
         }
 
         function nextStep() {
@@ -1072,6 +1116,40 @@
             window.scrollTo(0, 0);
         }
 
+        function jumpToStep(stepNumber) {
+            document.getElementById(`step${state.currentStep}`).classList.remove('active');
+            state.currentStep = stepNumber;
+            document.getElementById(`step${state.currentStep}`).classList.add('active');
+            
+            // Restore selections visually
+            if (stepNumber === 1) {
+                document.querySelectorAll('.support-card').forEach(card => {
+                    if (state.selectedAreas.includes(card.dataset.area)) {
+                        card.classList.add('selected');
+                    }
+                });
+            } else if (stepNumber === 2) {
+                populateGoals();
+            } else if (stepNumber === 3) {
+                startSlider.value = state.startWeeks;
+                deliverySlider.value = state.deliveryWeeks;
+                startValue.textContent = state.startWeeks === 1 ? 'Immediately' : `${state.startWeeks} weeks`;
+                deliveryValue.textContent = `${state.deliveryWeeks} weeks`;
+                updateImpact();
+            }
+            
+            window.scrollTo(0, 0);
+        }
+
+        function closeOfferModal() {
+            document.getElementById('offerModal').classList.remove('active');
+        }
+
+        function downloadOffer() {
+            alert('Alt-McKinsey Report download started');
+            closeOfferModal();
+        }
+
         function openReportsModal() {
             document.getElementById('reportsModal').classList.add('active');
         }
@@ -1086,7 +1164,6 @@
 
         function downloadReport(reportId) {
             alert(`Downloading: ${reportId}`);
-            // Implement actual download logic
         }
 
         window.onclick = function(event) {
