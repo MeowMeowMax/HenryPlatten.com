@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platten | AI Capability Marketplace</title>
+    <style>
+        :root {
+            --primary: #0066cc;
+            --dark: #1a1a1a;
+            --gray: #636e72;
+            --light: #f8f9fa;
+            --success: #00b894;
+            --white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background: var(--white);
+        }
+        
+        header {
+            background: var(--white);
+            border-bottom: 1px solid #e1e8ed;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 1.5rem 2rem;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .header-nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .header-nav button {
+            background: none;
+            border: none;
+            color: var(--gray);
+            font-size: 0.95rem;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+            transition: color 0.3s;
+        }
+        
+        .header-nav button:hover {
+            color: var(--primary);
+        }
+        
+        .location {
+            color: var(--gray);
+            font-size: 0.9rem;
+        }
+        
+        .hero {
+            margin-top: 80px;
+            padding: 4rem 2rem 2rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: var(--white);
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .configurator {
+            padding: 3rem 0;
+            min-height: 70vh;
+        }
+        
+        .step {
+            display: none;
+            animation: fadeIn 0.3s;
+        }
+        
+        .step.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .step-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            line-height: 40px;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .step-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .step-subtitle {
+            font-size: 1.2rem;
+            color: var(--gray);
+        }
+        
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .support-card {
+            background: var(--light);
+            padding: 2.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 3px solid transparent;
+            position: relative;
+        }
+        
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .support-card.selected {
+            border-color: var(--primary);
+            background: #e8f4ff;
+        }
+        
+        .support-card .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .support-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .support-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .support-card .checkmark {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 30px;
+            height: 30px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .support-card.selected .checkmark {
+            display: flex;
+        }
+        
+        .goals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .goal-card {
+            background: var(--white);
+            border: 2px solid #e1e8ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .goal-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .goal-card.selected {
+            border-color: var(--primary);
+            background: #e8f4ff;
+        }
+        
+        .goal-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .goal-card p {
+            font-size: 0.95rem;
+            color: var(--gray);
+        }
+        
+        .slider-container {
+            margin: 3rem 0;
+            padding: 2rem;
+            background: var(--light);
+            border-radius: 10px;
+        }
+        
+        .slider-group {
+            margin-bottom: 3rem;
+        }
+        
+        .slider-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .slider-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+        
+        .slider-value {
+            color: var(--primary);
+            font-size: 1.3rem;
+        }
+        
+        input[type="range"] {
+            width: 100%;
+            height: 8px;
+            border-radius: 5px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+        }
+        
+        input[type="range"]::-moz-range-thumb {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--primary);
+            cursor: pointer;
+            border: none;
+        }
+        
+        .slider-markers {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        
+        .impact-preview {
+            background: linear-gradient(135deg, var(--primary) 0%, #004c99 100%);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+        
+        .impact-preview h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .impact-item {
+            text-align: center;
+        }
+        
+        .impact-item .value {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-item .label {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .summary-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .summary-card {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+        }
+        
+        .summary-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark);
+        }
+        
+        .summary-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .summary-item:last-child {
+            border-bottom: none;
+        }
+        
+        .summary-item .label {
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        .summary-item .value {
+            color: var(--gray);
+        }
+        
+        .total-investment {
+            background: var(--primary);
+            color: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 2rem;
+        }
+        
+        .total-investment .amount {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+        
+        .total-investment .period {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background: #004c99;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--light);
+        }
+        
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal.active {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 10px;
+            max-width: 800px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: var(--gray);
+        }
+        
+        .modal-close:hover {
+            color: var(--dark);
+        }
+        
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .report-card {
+            border: 2px solid #e1e8ed;
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .report-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .report-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark);
+        }
+        
+        .report-card p {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+        
+        .report-card button {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        
+        .report-card button:hover {
+            background: #004c99;
+        }
+        
+        /* Media Section */
+        .media-section {
+            padding: 4rem 0;
+            background: var(--light);
+        }
+        
+        .media-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--dark);
+        }
+        
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .media-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .media-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .media-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .media-card-content {
+            padding: 1.5rem;
+        }
+        
+        .media-type {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+        }
+        
+        .media-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.75rem;
+            color: var(--dark);
+        }
+        
+        .media-card p {
+            color: var(--gray);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .media-card a {
+            display: inline-block;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .media-card a:hover {
+            text-decoration: underline;
+        }
+        
+        .calendly-inline-widget {
+            min-width: 320px;
+            height: 700px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .step-title {
+                font-size: 1.8rem;
+            }
+            
+            .support-grid,
+            .goals-grid,
+            .media-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .button-group {
+                flex-direction: column;
+            }
+            
+            .header-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">Platten</div>
+            <div class="header-nav">
+                <button onclick="openReportsModal()">📥 Download Reports</button>
+                <button onclick="scrollToMedia()">🎙️ Media</button>
+            </div>
+            <div class="location">London ✦ MENA</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Configure Your AI Capability</h1>
+        <p>Interactive marketplace for VC fund managers and Series A/B boards to build custom AI solutions</p>
+    </section>
+
+    <section class="configurator">
+        <div class="container">
+            
+            <!-- Step 1: Select Support Area -->
+            <div class="step active" id="step1">
+                <div class="step-header">
+                    <div class="step-number">1</div>
+                    <h2 class="step-title">Select Your Support Area</h2>
+                    <p class="step-subtitle">Choose the type of AI capability you need (select multiple)</p>
+                </div>
+                
+                <div class="support-grid">
+                    <div class="support-card" data-area="governance">
+                        <div class="checkmark">✓</div>
+                        <div class="icon">🛡️</div>
+                        <h3>AI Governance & Compliance</h3>
+                        <p>EU AI Act compliance, risk frameworks, audit trails, board reporting that passes due diligence</p>
+                    </div>
+                    
+                    <div class="support-card" data-area="strategy">
+                        <div class="checkmark">✓</div>
+                        <div class="icon">🎯</div>
+                        <h3>AI Strategy & Roadmap</h3>
+                        <p>Build vs buy decisions, competitive moat identification, investor-grade value cases, capability planning</p>
+                    </div>
+                    
+                    <div class="support-card" data-area="virtual-cao">
+                        <div class="checkmark">✓</div>
+                        <div class="icon">⚡</div>
+                        <h3>Virtual Chief AI Officer</h3>
+                        <p>Build AI function from zero, ship production systems, ongoing capability development, executive oversight</p>
+                    </div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn btn-primary" onclick="nextStep()" id="step1Next" disabled>Continue →</button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Desired Goals -->
+            <div class="step" id="step2">
+                <div class="step-header">
+                    <div class="step-number">2</div>
+                    <h2 class="step-title">Define Your Desired Goals</h2>
+                    <p class="step-subtitle">What outcomes and benefits matter most?</p>
+                </div>
+                
+                <div class="goals-grid" id="goalsGrid"></div>
+                
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                    <button class="btn btn-primary" onclick="nextStep()" id="step2Next" disabled>Continue →</button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Build Solution -->
+            <div class="step" id="step3">
+                <div class="step-header">
+                    <div class="step-number">3</div>
+                    <h2 class="step-title">Build Your Solution</h2>
+                    <p class="step-subtitle">Configure time and budget (faster delivery = premium pricing)</p>
+                </div>
+                
+                <div class="slider-container">
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>Timeline</span>
+                            <span class="slider-value" id="timeValue">12 weeks</span>
+                        </div>
+                        <input type="range" id="timeSlider" min="4" max="24" value="12" step="2">
+                        <div class="slider-markers">
+                            <span>4 weeks<br><small>(Rush)</small></span>
+                            <span>12 weeks<br><small>(Standard)</small></span>
+                            <span>24 weeks<br><small>(Extended)</small></span>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-group">
+                        <div class="slider-label">
+                            <span>Budget</span>
+                            <span class="slider-value" id="budgetValue">£75,000</span>
+                        </div>
+                        <input type="range" id="budgetSlider" min="25000" max="250000" value="75000" step="5000">
+                        <div class="slider-markers">
+                            <span>£25k<br><small>(Focused)</small></span>
+                            <span>£75k<br><small>(Standard)</small></span>
+                            <span>£250k<br><small>(Comprehensive)</small></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="impact-preview">
+                    <h3>Projected Impact with Platten</h3>
+                    <div class="impact-grid" id="impactGrid"></div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                    <button class="btn btn-primary" onclick="nextStep()">Review & Book →</button>
+                </div>
+            </div>
+            
+            <!-- Step 4: Review & Book -->
+            <div class="step" id="step4">
+                <div class="step-header">
+                    <div class="step-number">4</div>
+                    <h2 class="step-title">Review & Book</h2>
+                    <p class="step-subtitle">Confirm configuration and schedule your strategy call</p>
+                </div>
+                
+                <div class="summary-grid">
+                    <div class="summary-card">
+                        <h3>Your Configuration</h3>
+                        <div id="configSummary"></div>
+                    </div>
+                    
+                    <div class="summary-card">
+                        <h3>Expected Outcomes</h3>
+                        <div id="outcomesSummary"></div>
+                    </div>
+                </div>
+                
+                <div class="total-investment">
+                    <div class="amount" id="totalAmount">£75,000</div>
+                    <div class="period" id="totalPeriod">Over 12 weeks</div>
+                </div>
+                
+                <div style="margin-top: 3rem;">
+                    <h3 style="text-align: center; margin-bottom: 2rem; font-size: 1.8rem;">Schedule Your Strategy Call</h3>
+                    <div class="calendly-inline-widget" data-url="https://calendly.com/henryplatten/30min-meeting?hide_gdpr_banner=1"></div>
+                </div>
+                
+                <div class="button-group">
+                    <button class="btn btn-secondary" onclick="prevStep()">← Back</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Media Section -->
+    <section class="media-section" id="mediaSection">
+        <div class="container">
+            <h2>Podcasts & Broadcasts</h2>
+            <div class="media-grid">
+                <div class="media-card">
+                    <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Podcast" alt="Podcast">
+                    <div class="media-card-content">
+                        <span class="media-type">PODCAST</span>
+                        <h3>AI Strategy for Series B Companies</h3>
+                        <p>Discussion on building defensible AI moats and passing due diligence</p>
+                        <a href="#" target="_blank">Listen Now →</a>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <img src="https://via.placeholder.com/400x200/764ba2/ffffff?text=Broadcast" alt="Broadcast">
+                    <div class="media-card-content">
+                        <span class="media-type">BROADCAST</span>
+                        <h3>EU AI Act Compliance Framework</h3>
+                        <p>Practical guidance for scale-ups navigating regulatory requirements</p>
+                        <a href="#" target="_blank">Watch Now →</a>
+                    </div>
+                </div>
+                
+                <div class="media-card">
+                    <img src="https://via.placeholder.com/400x200/667eea/ffffff?text=Interview" alt="Interview">
+                    <div class="media-card-content">
+                        <span class="media-type">INTERVIEW</span>
+                        <h3>Build vs Buy: AI Decision Framework</h3>
+                        <p>How VCs evaluate AI capability in portfolio companies</p>
+                        <a href="#" target="_blank">Watch Now →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reports Modal -->
+    <div class="modal" id="reportsModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeReportsModal()">×</span>
+            <h2 style="margin-bottom: 1rem;">Download Reports</h2>
+            <p style="color: var(--gray); margin-bottom: 2rem;">Practical guides for building AI capability</p>
+            
+            <div class="reports-grid">
+                <div class="report-card">
+                    <h4>EU AI Act Compliance Guide</h4>
+                    <p>Step-by-step framework for Series A/B companies</p>
+                    <button onclick="downloadReport('eu-ai-act')">Download PDF</button>
+                </div>
+                
+                <div class="report-card">
+                    <h4>Build vs Buy Decision Matrix</h4>
+                    <p>Economic framework for AI technology decisions</p>
+                    <button onclick="downloadReport('build-vs-buy')">Download PDF</button>
+                </div>
+                
+                <div class="report-card">
+                    <h4>AI Governance Checklist</h4>
+                    <p>Pre-due diligence preparation for fundraising</p>
+                    <button onclick="downloadReport('governance-checklist')">Download PDF</button>
+                </div>
+                
+                <div class="report-card">
+                    <h4>Fractional CAO ROI Calculator</h4>
+                    <p>Cost comparison vs full-time executive hire</p>
+                    <button onclick="downloadReport('roi-calculator')">Download XLSX</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+    <script>
+        const state = {
+            currentStep: 1,
+            selectedAreas: [],
+            selectedGoals: [],
+            timeline: 12,
+            budget: 75000
+        };
+
+        const goalsDatabase = {
+            governance: [
+                { id: 'g1', title: 'Pass Due Diligence', desc: 'Clean regulatory audit trail for investors and acquirers' },
+                { id: 'g2', title: 'Zero Regulatory Fines', desc: 'EU AI Act, GDPR compliance built into deployment' },
+                { id: 'g3', title: 'Board Confidence', desc: 'Directors protected from personal liability' },
+                { id: 'g4', title: 'Investor Trust', desc: 'Risk frameworks that enable innovation' }
+            ],
+            strategy: [
+                { id: 's1', title: 'Defensible AI Moat', desc: 'Clear competitive advantage that investors value' },
+                { id: 's2', title: 'Build vs Buy Clarity', desc: 'Economic framework for technology decisions' },
+                { id: 's3', title: 'Faster Fundraising', desc: 'Investor-grade AI strategy that closes rounds' },
+                { id: 's4', title: 'Capability Roadmap', desc: 'Practical path from current to desired state' }
+            ],
+            'virtual-cao': [
+                { id: 'v1', title: 'AI Function Built', desc: 'From ground zero to production capability' },
+                { id: 'v2', title: 'First System Shipped', desc: 'Production AI system live in 90 days' },
+                { id: 'v3', title: 'Team Capability', desc: 'Internal team trained and able to scale' },
+                { id: 'v4', title: 'Executive Oversight', desc: 'Strategic AI leadership without full-time hire' }
+            ]
+        };
+
+        document.querySelectorAll('.support-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const area = this.dataset.area;
+                this.classList.toggle('selected');
+                
+                if (this.classList.contains('selected')) {
+                    state.selectedAreas.push(area);
+                } else {
+                    state.selectedAreas = state.selectedAreas.filter(a => a !== area);
+                }
+                
+                document.getElementById('step1Next').disabled = state.selectedAreas.length === 0;
+            });
+        });
+
+        function populateGoals() {
+            const goalsGrid = document.getElementById('goalsGrid');
+            goalsGrid.innerHTML = '';
+            
+            state.selectedAreas.forEach(area => {
+                const goals = goalsDatabase[area];
+                goals.forEach(goal => {
+                    const goalCard = document.createElement('div');
+                    goalCard.className = 'goal-card';
+                    goalCard.dataset.goalId = goal.id;
+                    goalCard.innerHTML = `
+                        <h4>${goal.title}</h4>
+                        <p>${goal.desc}</p>
+                    `;
+                    goalCard.addEventListener('click', function() {
+                        this.classList.toggle('selected');
+                        const goalId = this.dataset.goalId;
+                        
+                        if (this.classList.contains('selected')) {
+                            state.selectedGoals.push(goal);
+                        } else {
+                            state.selectedGoals = state.selectedGoals.filter(g => g.id !== goalId);
+                        }
+                        
+                        document.getElementById('step2Next').disabled = state.selectedGoals.length === 0;
+                    });
+                    goalsGrid.appendChild(goalCard);
+                });
+            });
+        }
+
+        const timeSlider = document.getElementById('timeSlider');
+        const budgetSlider = document.getElementById('budgetSlider');
+        const timeValue = document.getElementById('timeValue');
+        const budgetValue = document.getElementById('budgetValue');
+
+        timeSlider.addEventListener('input', function() {
+            state.timeline = parseInt(this.value);
+            timeValue.textContent = `${state.timeline} weeks`;
+            
+            // Faster = higher cost
+            if (state.timeline <= 8) {
+                const minBudget = 75000;
+                if (state.budget < minBudget) {
+                    state.budget = minBudget;
+                    budgetSlider.value = minBudget;
+                    budgetValue.textContent = `£${(state.budget/1000).toFixed(0)}k`;
+                }
+            }
+            
+            updateImpact();
+        });
+
+        budgetSlider.addEventListener('input', function() {
+            state.budget = parseInt(this.value);
+            budgetValue.textContent = `£${(state.budget/1000).toFixed(0)}k`;
+            updateImpact();
+        });
+
+        function updateImpact() {
+            const impactGrid = document.getElementById('impactGrid');
+            
+            const speedMultiplier = state.timeline <= 8 ? 'Rapid' : state.timeline <= 16 ? 'Standard' : 'Extended';
+            const scopeLevel = state.budget < 50000 ? 'Focused' : state.budget < 150000 ? 'Comprehensive' : 'Enterprise';
+            
+            impactGrid.innerHTML = `
+                <div class="impact-item">
+                    <div class="value">${state.timeline}w</div>
+                    <div class="label">Time to Value</div>
+                </div>
+                <div class="impact-item">
+                    <div class="value">${speedMultiplier}</div>
+                    <div class="label">Delivery Speed</div>
+                </div>
+                <div class="impact-item">
+                    <div class="value">${scopeLevel}</div>
+                    <div class="label">Scope Level</div>
+                </div>
+                <div class="impact-item">
+                    <div class="value">${state.selectedGoals.length}</div>
+                    <div class="label">Goals Achieved</div>
+                </div>
+            `;
+        }
+
+        function generateSummary() {
+            const configSummary = document.getElementById('configSummary');
+            const outcomesSummary = document.getElementById('outcomesSummary');
+            
+            const areaNames = {
+                governance: 'AI Governance & Compliance',
+                strategy: 'AI Strategy & Roadmap',
+                'virtual-cao': 'Virtual Chief AI Officer'
+            };
+            
+            let configHTML = '';
+            state.selectedAreas.forEach(area => {
+                configHTML += `
+                    <div class="summary-item">
+                        <span class="label">${areaNames[area]}</span>
+                        <span class="value">✓</span>
+                    </div>
+                `;
+            });
+            configHTML += `
+                <div class="summary-item">
+                    <span class="label">Timeline</span>
+                    <span class="value">${state.timeline} weeks</span>
+                </div>
+                <div class="summary-item">
+                    <span class="label">Budget</span>
+                    <span class="value">£${(state.budget/1000).toFixed(0)}k</span>
+                </div>
+            `;
+            configSummary.innerHTML = configHTML;
+            
+            let outcomesHTML = '';
+            state.selectedGoals.forEach(goal => {
+                outcomesHTML += `
+                    <div class="summary-item">
+                        <span class="label">${goal.title}</span>
+                        <span class="value">✓</span>
+                    </div>
+                `;
+            });
+            outcomesSummary.innerHTML = outcomesHTML;
+            
+            document.getElementById('totalAmount').textContent = `£${(state.budget/1000).toFixed(0)}k`;
+            document.getElementById('totalPeriod').textContent = `Over ${state.timeline} weeks`;
+        }
+
+        function nextStep() {
+            if (state.currentStep === 1) populateGoals();
+            else if (state.currentStep === 2) updateImpact();
+            else if (state.currentStep === 3) generateSummary();
+            
+            document.getElementById(`step${state.currentStep}`).classList.remove('active');
+            state.currentStep++;
+            document.getElementById(`step${state.currentStep}`).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function prevStep() {
+            document.getElementById(`step${state.currentStep}`).classList.remove('active');
+            state.currentStep--;
+            document.getElementById(`step${state.currentStep}`).classList.add('active');
+            window.scrollTo(0, 0);
+        }
+
+        function openReportsModal() {
+            document.getElementById('reportsModal').classList.add('active');
+        }
+
+        function closeReportsModal() {
+            document.getElementById('reportsModal').classList.remove('active');
+        }
+
+        function scrollToMedia() {
+            document.getElementById('mediaSection').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function downloadReport(reportId) {
+            alert(`Downloading: ${reportId}`);
+            // Implement actual download logic
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('reportsModal');
+            if (event.target == modal) {
+                closeReportsModal();
+            }
+        }
+    </script>
+</body>
+</html>
