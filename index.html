@@ -4,6 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Platten | AI Capability Marketplace</title>
+    
+    <!-- A/B Testing Script -->
+    <script>
+        // 8 Hero Variants for A/B Testing
+        const heroVariants = [
+            {
+                id: 'variant_1_trifecta',
+                title: 'Stop Choosing Between Strategy, Compliance, and Execution.',
+                subtitle: 'We do all three: AI governance that passes due diligence, build vs buy decisions VCs trust, and production systems that ship in 90 days.'
+            },
+            {
+                id: 'variant_2_anti_frag',
+                title: 'One Team. Strategy + Governance + Execution.',
+                subtitle: 'Stop hiring 3 different firms to build AI capability. We deliver board-ready governance, investor-grade strategy, and production systems—without burning your runway.'
+            },
+            {
+                id: 'variant_3_complete',
+                title: 'AI Capability That Actually Works: Built, Governed, Funded.',
+                subtitle: 'For VCs and Series A/B boards who need systems that ship, governance that passes DD, and strategy that closes rounds. Fast. Complete. No consultancy theatre.'
+            },
+            {
+                id: 'variant_4_finally',
+                title: 'Finally: AI Leadership That Builds, Governs, and Ships.',
+                subtitle: 'Stop wasting runway on consultants who strategize, CTOs who can\'t navigate compliance, and firms who don\'t execute. Start today. Production systems in 90 days.'
+            },
+            {
+                id: 'variant_5_runway',
+                title: 'Stretch Your Runway. Ship AI That Actually Works.',
+                subtitle: 'Stop wasting £200k+ on wrong hires and consultancies. Start building production AI systems today—not in 6 months.'
+            },
+            {
+                id: 'variant_6_burning',
+                title: 'Your Runway Is Burning. We Build AI Faster.',
+                subtitle: 'VCs and Series A/B boards: Get production systems in 90 days, not strategy decks that kill your cash.'
+            },
+            {
+                id: 'variant_7_without',
+                title: 'AI Capability Without Burning Your Runway',
+                subtitle: 'Move fast. Start today. Ship production systems in 90 days—not PowerPoint in 9 months.'
+            },
+            {
+                id: 'variant_8_stop',
+                title: 'Stop Wasting Money. Build AI That Ships.',
+                subtitle: 'For VCs and Series A/B boards who need production systems today, not consultancy theatre.'
+            }
+        ];
+
+        // Get or assign variant (persists per user)
+        function getVariant() {
+            let variant = sessionStorage.getItem('ab_variant');
+            if (!variant) {
+                variant = heroVariants[Math.floor(Math.random() * heroVariants.length)].id;
+                sessionStorage.setItem('ab_variant', variant);
+                sessionStorage.setItem('ab_timestamp', new Date().toISOString());
+            }
+            return variant;
+        }
+
+        // Track events
+        function trackABEvent(event, data = {}) {
+            const variant = getVariant();
+            const eventData = {
+                variant: variant,
+                event: event,
+                timestamp: new Date().toISOString(),
+                ...data
+            };
+            
+            // Console logging
+            console.log('AB Test Event:', eventData);
+            
+            // Google Analytics (if installed)
+            if (typeof gtag !== 'undefined') {
+                gtag('event', event, {
+                    'variant': variant,
+                    'event_category': 'ab_test',
+                    'event_label': event,
+                    ...data
+                });
+            }
+            
+            // Store key conversions
+            if (event === 'step1_continue') {
+                sessionStorage.setItem('ab_converted', 'true');
+                sessionStorage.setItem('ab_conversion_time', new Date().toISOString());
+            }
+        }
+
+        // Apply variant on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            const variantId = getVariant();
+            const variant = heroVariants.find(v => v.id === variantId);
+            
+            if (variant) {
+                document.querySelector('.hero h1').textContent = variant.title;
+                document.querySelector('.hero p').textContent = variant.subtitle;
+            }
+            
+            // Track page view
+            trackABEvent('page_view');
+        });
+
+        // Debug function
+        function showABResults() {
+            console.log('=== A/B Test Status ===');
+            console.log('Variant:', sessionStorage.getItem('ab_variant'));
+            console.log('Page View:', sessionStorage.getItem('ab_timestamp'));
+            console.log('Converted:', sessionStorage.getItem('ab_converted') || 'No');
+            console.log('Conversion Time:', sessionStorage.getItem('ab_conversion_time') || 'N/A');
+        }
+    </script>
+    
+    <!-- Google Analytics - REPLACE G-XXXXXXXXXX with your tracking ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    
     <style>
         :root {
             --primary: #0066cc;
@@ -93,8 +214,83 @@
         .hero p {
             font-size: 1.3rem;
             opacity: 0.95;
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        
+        .credentials-bar {
+            background: var(--dark);
+            color: var(--white);
+            padding: 2rem 0;
+            border-top: 3px solid var(--primary);
+        }
+        
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+        
+        .credential-item {
+            padding: 1rem;
+        }
+        
+        .credential-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .credential-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        .proof-section {
+            background: var(--light);
+            padding: 4rem 0;
+        }
+        
+        .proof-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark);
+        }
+        
+        .proof-section > p {
+            text-align: center;
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+        }
+        
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .proof-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .proof-card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .proof-card p {
+            color: var(--gray);
+            line-height: 1.6;
         }
         
         .container {
@@ -640,6 +836,23 @@
                 font-size: 2rem;
             }
             
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .credentials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .credential-value {
+                font-size: 2rem;
+            }
+            
+            .proof-grid {
+                grid-template-columns: 1fr;
+            }
+            
             .step-title {
                 font-size: 1.8rem;
             }
@@ -687,6 +900,70 @@
     <section class="hero">
         <h1>Configure Your AI Capability</h1>
         <p>Interactive marketplace for VC fund managers and Series A/B boards to build custom AI solutions</p>
+    </section>
+
+    <!-- Credentials Bar -->
+    <section class="credentials-bar">
+        <div class="container">
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <div class="credential-value">15+</div>
+                    <div class="credential-label">Years Leading AI</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-value">70+</div>
+                    <div class="credential-label">Countries Deployed</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-value">🏛️</div>
+                    <div class="credential-label">UK Govt Advisory</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-value">⚖️</div>
+                    <div class="credential-label">International AI Patents</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <h2>Why VCs and Boards Trust Platten</h2>
+            <p>Not consultants. Not theorists. Battle-tested AI leadership with 15+ years building, governing, and scaling AI systems globally.</p>
+            
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-card-title">🔬 International Patent Holder</div>
+                    <p>Emotion AI patents granted internationally. Not just implementing AI—inventing it.</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-card-title">🏛️ UK Government Advisor</div>
+                    <p>Advised All Party Parliamentary Group on Safer Social Media. FSB National AI Strategy Advisor. We navigate regulation because we help write it.</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-card-title">🌍 70+ Countries at Scale</div>
+                    <p>Co-founded GoBubble: 3,500+ schools, 70 countries, all-cash exit. We've shipped AI systems that actually scale globally.</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-card-title">🎓 MIT + Harvard Trained</div>
+                    <p>Formal AI education from MIT Professional Education and Harvard Online. Academic rigour meets commercial velocity.</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-card-title">⚡ Production Systems Live</div>
+                    <p>Currently: Multi-agent systems for Crown Cards, real-time ML at scale. Not strategy decks—working code.</p>
+                </div>
+                
+                <div class="proof-card">
+                    <div class="proof-card-title">🛡️ Regulatory Deep Expertise</div>
+                    <p>Former police + current APPG advisor = unique understanding of compliance frameworks others miss.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="configurator">
@@ -873,8 +1150,9 @@
     <div class="modal active" id="offerModal">
         <div class="modal-content offer-modal">
             <span class="modal-close" onclick="closeOfferModal()">×</span>
-            <h2>Download Our Alt-McKinsey Report</h2>
-            <p>Exclusive insights for VCs and startup/growth CEOs on building AI capability without the £500k consultancy bill.</p>
+            <h2>From the Team That Built AI Across 70 Countries</h2>
+            <p><strong>15+ years leading AI.</strong> International patents. UK Government advisor. MIT & Harvard trained.</p>
+            <p>Download our Alt-McKinsey Report: How to build AI capability without the £500k consultancy bill.</p>
             <p><strong>What's inside:</strong><br>
             ✓ Build vs Buy decision framework<br>
             ✓ AI governance that passes due diligence<br>
@@ -958,6 +1236,7 @@
                 
                 if (this.classList.contains('selected')) {
                     state.selectedAreas.push(area);
+                    trackABEvent('area_selected', { area: area });
                 } else {
                     state.selectedAreas = state.selectedAreas.filter(a => a !== area);
                 }
@@ -977,7 +1256,6 @@
                     goalCard.className = 'goal-card';
                     goalCard.dataset.goalId = goal.id;
                     
-                    // Check if this goal was already selected
                     if (state.selectedGoals.find(g => g.id === goal.id)) {
                         goalCard.classList.add('selected');
                     }
@@ -993,6 +1271,7 @@
                         if (this.classList.contains('selected')) {
                             if (!state.selectedGoals.find(g => g.id === goalId)) {
                                 state.selectedGoals.push(goal);
+                                trackABEvent('goal_selected', { goal: goal.title });
                             }
                         } else {
                             state.selectedGoals = state.selectedGoals.filter(g => g.id !== goalId);
@@ -1061,7 +1340,6 @@
                 'virtual-cao': 'Virtual Chief AI Officer'
             };
             
-            // Areas
             let areasHTML = '';
             state.selectedAreas.forEach(area => {
                 areasHTML += `
@@ -1073,7 +1351,6 @@
             });
             areasSummary.innerHTML = areasHTML;
             
-            // Goals
             let goalsHTML = '';
             state.selectedGoals.forEach(goal => {
                 goalsHTML += `
@@ -1085,7 +1362,6 @@
             });
             goalsSummary.innerHTML = goalsHTML;
             
-            // Timeline
             timelineSummary.innerHTML = `
                 <div class="summary-item">
                     <span class="label">Start</span>
@@ -1099,9 +1375,16 @@
         }
 
         function nextStep() {
-            if (state.currentStep === 1) populateGoals();
-            else if (state.currentStep === 2) updateImpact();
-            else if (state.currentStep === 3) generateSummary();
+            if (state.currentStep === 1) {
+                populateGoals();
+                trackABEvent('step1_continue');
+            } else if (state.currentStep === 2) {
+                updateImpact();
+                trackABEvent('step2_continue');
+            } else if (state.currentStep === 3) {
+                generateSummary();
+                trackABEvent('step3_continue');
+            }
             
             document.getElementById(`step${state.currentStep}`).classList.remove('active');
             state.currentStep++;
@@ -1117,11 +1400,12 @@
         }
 
         function jumpToStep(stepNumber) {
+            trackABEvent('edit_clicked', { from_step: state.currentStep, to_step: stepNumber });
+            
             document.getElementById(`step${state.currentStep}`).classList.remove('active');
             state.currentStep = stepNumber;
             document.getElementById(`step${state.currentStep}`).classList.add('active');
             
-            // Restore selections visually
             if (stepNumber === 1) {
                 document.querySelectorAll('.support-card').forEach(card => {
                     if (state.selectedAreas.includes(card.dataset.area)) {
@@ -1143,15 +1427,18 @@
 
         function closeOfferModal() {
             document.getElementById('offerModal').classList.remove('active');
+            trackABEvent('modal_closed');
         }
 
         function downloadOffer() {
+            trackABEvent('modal_download');
             alert('Alt-McKinsey Report download started');
             closeOfferModal();
         }
 
         function openReportsModal() {
             document.getElementById('reportsModal').classList.add('active');
+            trackABEvent('reports_modal_opened');
         }
 
         function closeReportsModal() {
@@ -1160,9 +1447,11 @@
 
         function scrollToMedia() {
             document.getElementById('mediaSection').scrollIntoView({ behavior: 'smooth' });
+            trackABEvent('media_scroll');
         }
 
         function downloadReport(reportId) {
+            trackABEvent('report_download', { report: reportId });
             alert(`Downloading: ${reportId}`);
         }
 
