@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prevent £1.7-3.2M Portfolio Waste | VC AI Strategy Adviser</title>
     <meta name="description" content="Portfolio-level AI risk management for VCs. Prevent aggregate runway waste across your AI investments through operator-tested strategic oversight.">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'page_title': 'VCs Landing - Control',
+            'page_variant': 'control',
+            'page_type': 'vc_landing'
+        });
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -17,12 +31,69 @@
             line-height: 1.6;
             color: #212529;
             background: #ffffff;
+            transition: direction 0.3s ease;
+        }
+
+        /* RTL Support */
+        body.rtl {
+            direction: rtl;
+            font-family: 'Segoe UI', 'Arial', sans-serif;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
+        }
+
+        /* Language Switcher */
+        .language-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 2000;
+            background: white;
+            padding: 8px 16px;
+            border-radius: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+
+        body.rtl .language-switcher {
+            right: auto;
+            left: 20px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 6px 12px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            color: #6c757d;
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-btn.active {
+            background: #0d6efd;
+            color: white;
+        }
+
+        .lang-btn:hover:not(.active) {
+            background: #f8f9fa;
+        }
+
+        /* Content visibility based on language */
+        .lang-content {
+            display: none;
+        }
+
+        .lang-content.active {
+            display: block;
         }
 
         /* HERO SECTION */
@@ -133,6 +204,11 @@
             border-radius: 16px;
             border-left: 5px solid #dc3545;
             box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        }
+
+        body.rtl .risk-card {
+            border-left: none;
+            border-right: 5px solid #dc3545;
         }
 
         .risk-icon {
@@ -396,10 +472,209 @@
             color: #495057;
         }
 
+        /* PRODUCT SELECTION SECTION */
+        .product-selection {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .product-selection h2 {
+            text-align: center;
+            font-size: 44px;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+
+        .selection-intro {
+            text-align: center;
+            font-size: 20px;
+            color: #495057;
+            margin-bottom: 70px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            margin-bottom: 60px;
+        }
+
+        .product-option {
+            position: relative;
+        }
+
+        .product-checkbox {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .product-label {
+            display: block;
+            background: #f8f9fa;
+            border: 3px solid #e9ecef;
+            border-radius: 16px;
+            padding: 40px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-checkbox:checked + .product-label {
+            background: white;
+            border-color: #0d6efd;
+            box-shadow: 0 12px 32px rgba(13, 110, 253, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .product-checkbox:checked + .product-label::after {
+            content: "✓";
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 36px;
+            height: 36px;
+            background: #198754;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        body.rtl .product-checkbox:checked + .product-label::after {
+            right: auto;
+            left: 16px;
+        }
+
+        .product-label:hover {
+            border-color: #0d6efd;
+            background: white;
+        }
+
+        .product-icon {
+            font-size: 56px;
+            margin-bottom: 20px;
+        }
+
+        .product-label h3 {
+            font-size: 22px;
+            font-weight: 800;
+            margin-bottom: 16px;
+            color: #212529;
+        }
+
+        .product-label p {
+            color: #495057;
+            line-height: 1.7;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        .product-price {
+            display: inline-block;
+            background: #e7f3ff;
+            color: #0d6efd;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 700;
+        }
+
+        .selection-summary {
+            background: #e7f3ff;
+            padding: 50px;
+            border-radius: 16px;
+            text-align: center;
+            border-left: 5px solid #0d6efd;
+            margin-bottom: 40px;
+        }
+
+        body.rtl .selection-summary {
+            border-left: none;
+            border-right: 5px solid #0d6efd;
+        }
+
+        .selection-summary h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 24px;
+            color: #212529;
+        }
+
+        #selectedList {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 32px;
+        }
+
+        #selectedList li {
+            font-size: 18px;
+            padding: 10px 0;
+            color: #495057;
+        }
+
+        #selectedList li::before {
+            content: "✓ ";
+            color: #198754;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        body.rtl #selectedList li::before {
+            margin-right: 0;
+            margin-left: 10px;
+        }
+
+        .btn-book-call {
+            display: inline-block;
+            background: #0d6efd;
+            color: white;
+            padding: 18px 56px;
+            border: none;
+            border-radius: 8px;
+            font-size: 20px;
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-book-call:hover {
+            background: #0b5ed7;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(13, 110, 253, 0.4);
+        }
+
+        .selection-note {
+            text-align: center;
+            padding: 40px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .selection-note p {
+            font-size: 18px;
+            color: #495057;
+            margin: 0;
+        }
+
+        .link-inline {
+            color: #0d6efd;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .link-inline:hover {
+            color: #0b5ed7;
+        }
+
         /* PROCESS SECTION */
         .vc-process {
             padding: 100px 0;
-            background: white;
+            background: #f8f9fa;
         }
 
         .vc-process h2 {
@@ -429,6 +704,10 @@
             position: relative;
         }
 
+        body.rtl .timeline-step {
+            flex-direction: row-reverse;
+        }
+
         .timeline-step:last-child {
             margin-bottom: 0;
         }
@@ -441,6 +720,11 @@
             bottom: -60px;
             width: 3px;
             background: #e9ecef;
+        }
+
+        body.rtl .timeline-step:not(:last-child)::after {
+            left: auto;
+            right: 39px;
         }
 
         .step-number-circle {
@@ -523,102 +807,6 @@
             opacity: 0.95;
         }
 
-        .cta-button-large {
-            display: inline-block;
-            background: #0d6efd;
-            color: white;
-            padding: 20px 56px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 22px;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button-large:hover {
-            background: #0b5ed7;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 36px rgba(13, 110, 253, 0.4);
-        }
-
-        /* CONTACT FORM */
-        .vc-contact {
-            padding: 100px 0;
-            background: #f8f9fa;
-        }
-
-        .vc-contact h2 {
-            text-align: center;
-            font-size: 44px;
-            font-weight: 900;
-            margin-bottom: 70px;
-        }
-
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 60px;
-            border-radius: 20px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-        }
-
-        .form-group {
-            margin-bottom: 28px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 10px;
-            font-weight: 700;
-            color: #212529;
-            font-size: 16px;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #0d6efd;
-        }
-
-        .submit-button {
-            width: 100%;
-            background: #0d6efd;
-            color: white;
-            padding: 18px;
-            border: none;
-            border-radius: 8px;
-            font-size: 20px;
-            font-weight: 800;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover {
-            background: #0b5ed7;
-            transform: translateY(-2px);
-        }
-
-        .form-note {
-            text-align: center;
-            margin-top: 24px;
-            font-size: 15px;
-            color: #6c757d;
-            line-height: 1.6;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -642,13 +830,28 @@
                 display: none;
             }
 
-            .contact-form {
-                padding: 40px 28px;
+            .language-switcher {
+                top: 10px;
+                right: 10px;
+            }
+
+            body.rtl .language-switcher {
+                right: auto;
+                left: 10px;
             }
         }
     </style>
 </head>
 <body>
+
+<!-- Language Switcher -->
+<div class="language-switcher">
+    <button class="lang-btn active" data-lang="en" onclick="switchLanguage('en')">English</button>
+    <button class="lang-btn" data-lang="ar" onclick="switchLanguage('ar')">العربية</button>
+</div>
+
+<!-- ENGLISH CONTENT -->
+<div class="lang-content active" data-lang="en">
 
 <!-- HERO SECTION -->
 <section class="hero">
@@ -664,7 +867,7 @@
         <span class="portfolio-stat">£1.7-3.2M</span>
         <p class="stat-context">Average portfolio-level runway preservation (8-12 companies)</p>
         
-        <a href="#contact" class="cta-primary">Request Portfolio Diagnostic →</a>
+        <a href="#products" class="cta-primary">Request Portfolio Diagnostic →</a>
     </div>
 </section>
 
@@ -852,6 +1055,76 @@
     </div>
 </section>
 
+<!-- PRODUCT SELECTION SECTION -->
+<section id="products" class="product-selection">
+    <div class="container">
+        <h2>Select Services You're Interested In</h2>
+        <p class="selection-intro">Choose one or more. We'll customize our portfolio review accordingly.</p>
+        
+        <div class="products-grid">
+            <div class="product-option" data-service="portfolio-diagnostic" data-calendly="https://calendly.com/henry-platten/portfolio-diagnostic">
+                <input type="checkbox" id="product-portfolio-en" class="product-checkbox">
+                <label for="product-portfolio-en" class="product-label">
+                    <div class="product-icon">📊</div>
+                    <h3>Portfolio Diagnostic</h3>
+                    <p>Technical architecture review across 3-5 companies. Identify aggregate risk exposure and strategic misalignment.</p>
+                    <span class="product-price">£25-40K</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="technical-dd" data-calendly="https://calendly.com/henry-platten/technical-dd">
+                <input type="checkbox" id="product-dd-en" class="product-checkbox">
+                <label for="product-dd-en" class="product-label">
+                    <div class="product-icon">🔍</div>
+                    <h3>Pre-Investment Due Diligence</h3>
+                    <p>Evaluate AI capability claims before capital deployment. Predict Series B technical debt.</p>
+                    <span class="product-price">£15-25K per company</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="portfolio-counsel" data-calendly="https://calendly.com/henry-platten/ongoing-counsel">
+                <input type="checkbox" id="product-counsel-en" class="product-checkbox">
+                <label for="product-counsel-en" class="product-label">
+                    <div class="product-icon">🎯</div>
+                    <h3>Ongoing Strategic Counsel</h3>
+                    <p>Monthly strategic sessions + async support for urgent portfolio decisions.</p>
+                    <span class="product-price">£200-300K annually</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="moat-assessment" data-calendly="https://calendly.com/henry-platten/moat-assessment">
+                <input type="checkbox" id="product-moat-en" class="product-checkbox">
+                <label for="product-moat-en" class="product-label">
+                    <div class="product-icon">🏰</div>
+                    <h3>Moat vs Theater Assessment</h3>
+                    <p>Identify which AI investments create sustainable competitive advantage versus expensive feature theater.</p>
+                    <span class="product-price">£15-20K per company</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="compliance-framework" data-calendly="https://calendly.com/henry-platten/compliance">
+                <input type="checkbox" id="product-compliance-en" class="product-checkbox">
+                <label for="product-compliance-en" class="product-label">
+                    <div class="product-icon">⚖️</div>
+                    <h3>EU AI Act Portfolio Compliance</h3>
+                    <p>Deploy one regulatory framework across portfolio. Compliance that passes diligence without killing velocity.</p>
+                    <span class="product-price">£30-50K portfolio-wide</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="selection-summary" id="selectionSummary-en" style="display: none;">
+            <h3>You've Selected:</h3>
+            <ul id="selectedList-en"></ul>
+            <button class="btn-book-call" id="bookCallBtn-en">Book Portfolio Review →</button>
+        </div>
+        
+        <div class="selection-note">
+            <p>Not sure which services fit? <a href="https://calendly.com/henry-platten/discovery-call" class="link-inline" target="_blank">Book a 20-minute discovery call</a> and we'll map your portfolio needs.</p>
+        </div>
+    </div>
+</section>
+
 <!-- PROCESS SECTION -->
 <section class="vc-process">
     <div class="container">
@@ -899,57 +1172,494 @@
         <div class="cta-box">
             <h3>Start with Portfolio Diagnostic</h3>
             <p>Technical architecture review across 3-5 portfolio companies. Identify aggregate risk exposure and strategic misalignment. Zero obligation. If the analysis doesn't reveal material risk, you pay nothing.</p>
-            <a href="#contact" class="cta-button-large">Request Portfolio Review</a>
+            <a href="#products" class="btn-book-call">Select Services & Book Call →</a>
         </div>
     </div>
 </section>
 
-<!-- CONTACT FORM -->
-<section id="contact" class="vc-contact">
+</div>
+
+<!-- ARABIC CONTENT -->
+<div class="lang-content" data-lang="ar">
+
+<!-- HERO SECTION - Arabic -->
+<section class="hero">
     <div class="container">
-        <h2>Start the Conversation</h2>
+        <div class="vc-badge">لشركات رأس المال الاستثماري</div>
         
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="fund">Fund Name</label>
-                <input type="text" id="fund" name="fund" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="portfolio-size">Approximate Portfolio Size (AI-focused companies)</label>
-                <select id="portfolio-size" name="portfolio-size" required>
-                    <option value="">Select range</option>
-                    <option value="1-5">1-5 companies</option>
-                    <option value="6-10">6-10 companies</option>
-                    <option value="11-20">11-20 companies</option>
-                    <option value="20+">20+ companies</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="immediate-concern">What's the immediate portfolio concern?</label>
-                <textarea id="immediate-concern" name="immediate-concern" rows="4" placeholder="e.g., Technical due diligence for AI acquisition target, concerned about runway burn rates across multiple portfolio companies, need strategic guidance for company approaching Series B"></textarea>
-            </div>
-            
-            <button type="submit" class="submit-button">Request Portfolio Diagnostic</button>
-            
-            <p class="form-note">Expect response within 24 hours. First conversation is exploratory assessment of portfolio risk exposure, no sales pressure.</p>
-        </form>
+        <h1>شركات محفظتك في الذكاء الاصطناعي تحرق £400-700 ألف جنيه على أخطاء استراتيجية</h1>
+        
+        <p class="hero-subhead">
+            منع £1.7-3.2 مليون جنيه من هدر رأس المال الإجمالي عبر محفظتك من خلال إشراف استراتيجي مُختبر. ليست نظرية استشارية. أنظمة حقيقية نجت من التوسع والخروج.
+        </p>
+        
+        <span class="portfolio-stat">£1.7-3.2 مليون</span>
+        <p class="stat-context">متوسط الحفاظ على رأس المال على مستوى المحفظة (8-12 شركة)</p>
+        
+        <a href="#products" class="cta-primary">طلب تشخيص المحفظة ←</a>
     </div>
 </section>
 
+<!-- PORTFOLIO PROBLEM SECTION - Arabic -->
+<section class="portfolio-problem">
+    <div class="container">
+        <h2>النمط الذي يدمر قيمة المحفظة</h2>
+        <p class="problem-intro">
+            شركات السلسلة A الخاصة بك تجمع رأس المال، تستأجر ماكنزي أو أكسنتشر، تنفذ أطر حوكمة المؤسسات، وتحرق 40٪ من رأس المال قبل إدراك أن قدرة الذكاء الاصطناعي غير قابلة للدفاع. هذا ليس معزولاً. إنه منهجي.
+        </p>
+        
+        <div class="portfolio-risk-grid">
+            <div class="risk-card">
+                <span class="risk-icon">⚠️</span>
+                <h3>الديون التقنية متنكرة في شكل استراتيجية</h3>
+                <p>الشركات تبني البنية التحتية للامتثال المؤسسي قبل التحقق من الطلب التجاري. بحلول السلسلة B، لديهم مسارات تدقيق لا تولد إيرادات وميزات نسخها المنافسون في 90 يوماً.</p>
+            </div>
+            
+            <div class="risk-card">
+                <span class="risk-icon">💸</span>
+                <h3>مسرح الحوكمة يحرق رأس المال</h3>
+                <p>£400-700 ألف جنيه تُنفق على لجان المخاطر، وعمليات التوثيق، ورسوم الاستشاريين المصممة لحجم Fortune 500. لا تأثير على الميزة التنافسية أو جاذبية السوق.</p>
+            </div>
+            
+            <div class="risk-card">
+                <span class="risk-icon">🎭</span>
+                <h3>مسرح التجريبي مقابل أنظمة الإنتاج</h3>
+                <p>قدرات الذكاء الاصطناعي التي تبدو مثيرة في عروض مجلس الإدارة ولكنها تنهار تحت حمل المستخدم الحقيقي. لا حلقات بيانات، لا تكاليف تبديل، لا قابلية للدفاع. مجرد مسرح تقني مكلف.</p>
+            </div>
+        </div>
+        
+        <div class="portfolio-math">
+            <h3>اقتصاديات المحفظة</h3>
+            
+            <div class="calculation">
+                <div class="calc-item">
+                    <span class="calc-value">8-12</span>
+                    <span class="calc-label">شركات المحفظة المركزة على الذكاء الاصطناعي</span>
+                </div>
+                
+                <div class="calc-item">
+                    <span class="calc-value">£400-700 ألف</span>
+                    <span class="calc-label">متوسط الهدر لكل شركة</span>
+                </div>
+                
+                <div class="calc-item">
+                    <span class="calc-value">£1.7-3.2 مليون</span>
+                    <span class="calc-label">إجمالي التعرض الكلي</span>
+                </div>
+            </div>
+            
+            <p class="conclusion">
+                المشورة الاستراتيجية تكلف £200-300 ألف جنيه سنوياً عبر المحفظة. هذا الاستثمار يمنع £1.7-3.2 مليون من هدر رأس المال الإجمالي. البديل هو مشاهدة كل شركة تقوم بشكل مستقل بنفس الأخطاء المكلفة بينما يجمع الاستشاريون رسومهم.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- VC CAPABILITIES SECTION - Arabic -->
+<section class="vc-capabilities">
+    <div class="container">
+        <h2>كيف أحمي قيمة المحفظة</h2>
+        
+        <div class="capabilities-grid">
+            <div class="capability-card">
+                <span class="capability-icon">📊</span>
+                <h3>إدارة مخاطر الذكاء الاصطناعي على مستوى المحفظة</h3>
+                <p>نشر إطار استراتيجي واحد بشكل منهجي عبر 8-12 شركة. تحديد التعرض للمخاطر الإجمالية قبل أن تتضاعف. منع مكافحة الحرائق من شركة إلى شركة.</p>
+            </div>
+            
+            <div class="capability-card">
+                <span class="capability-icon">🔍</span>
+                <h3>العناية الواجبة التقنية قبل الاستثمار</h3>
+                <p>تقييم ادعاءات قدرات الذكاء الاصطناعي قبل نشر رأس المال. التمييز بين الأنظمة ذات الدرجة الإنتاجية ومسرح التجريبي.</p>
+            </div>
+            
+            <div class="capability-card">
+                <span class="capability-icon">🏰</span>
+                <h3>تقييم الخندق مقابل المسرح</h3>
+                <p>تحديد الاستثمارات في الذكاء الاصطناعي التي تخلق ميزة تنافسية مستدامة مقابل تكرار الميزات المكلفة.</p>
+            </div>
+            
+            <div class="capability-card">
+                <span class="capability-icon">⚖️</span>
+                <h3>إطار امتثال المحفظة لقانون الذكاء الاصطناعي الأوروبي</h3>
+                <p>نشر الأطر التنظيمية عبر المحفظة دون قتل السرعة. نهج تنظيمي واحد مُكيف لشركات متعددة.</p>
+            </div>
+            
+            <div class="capability-card">
+                <span class="capability-icon">🎯</span>
+                <h3>المشورة الاستراتيجية لشركات المحفظة</h3>
+                <p>مستشار مدمج لقرارات هندسة الذكاء الاصطناعي، وإرشادات البناء مقابل الشراء، وتقييم المواهب التقنية.</p>
+            </div>
+            
+            <div class="capability-card">
+                <span class="capability-icon">💰</span>
+                <h3>استراتيجية الحفاظ على رأس المال</h3>
+                <p>تحديد £400-700 ألف جنيه من الإنفاق التقني القابل للمنع لكل شركة. إيقاف الأطر المؤسسية التي تفلس الشركات الناشئة.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIFFERENTIATION SECTION - Arabic -->
+<section class="vc-differentiation">
+    <div class="container">
+        <h2>لماذا تختار شركات رأس المال الاستثماري الاستراتيجية القائمة على المشغل</h2>
+        <p class="diff-intro">
+            محفظتك لا تحتاج إلى المزيد من الأطر النظرية. إنها تحتاج إلى إرشادات استراتيجية من شخص وسّع أنظمة الذكاء الاصطناعي من النموذج الأولي إلى الخروج.
+        </p>
+        
+        <div class="comparison-grid">
+            <div class="comparison-card">
+                <div class="comparison-type">الاستشارات التقليدية</div>
+                <h3>ما تحصل عليه حالياً</h3>
+                <ul class="comparison-list">
+                    <li>أطر مؤسسية مصممة لشركات Fortune 500</li>
+                    <li>شركاء صغار يقدمون التوصيات</li>
+                    <li>مسرح حوكمة يمرر اجتماعات مجلس الإدارة</li>
+                    <li>£500 ألف+ لكل مشاركة، لكل شركة</li>
+                    <li>النجاح يُقاس بالتسليمات المكتملة</li>
+                    <li>لا مصلحة في اللعبة بعد دفع الفاتورة</li>
+                </ul>
+            </div>
+            
+            <div class="comparison-card">
+                <div class="comparison-type">الاستراتيجية القائمة على المشغل</div>
+                <h3>ما تحتاجه محفظتك فعلاً</h3>
+                <ul class="comparison-list">
+                    <li>قرارات مبنية على ما ينكسر في حجم الشركة الناشئة</li>
+                    <li>مشغل مباشر وسّع إلى 1 مليون+ مستخدم شخصياً</li>
+                    <li>دفاع تجاري ينجو من العناية الواجبة للسلسلة B</li>
+                    <li>£200-300 ألف سنوياً عبر المحفظة بأكملها</li>
+                    <li>النجاح يُقاس برأس المال المحفوظ، والخروج المحقق</li>
+                    <li>السمعة مرتبطة بنتائج شركات المحفظة</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CREDIBILITY SECTION - Arabic -->
+<section class="vc-credibility">
+    <div class="container">
+        <h2>لماذا يعمل هذا النهج على نطاق المحفظة</h2>
+        
+        <div class="proof-grid">
+            <div class="proof-card">
+                <span class="proof-stat">+1 مليون</span>
+                <p>مستخدم على أنظمة الذكاء الاصطناعي التي بنيتها ووسعتها عبر 70 دولة قبل الخروج الناجح</p>
+            </div>
+            
+            <div class="proof-card">
+                <span class="proof-stat">+150 ألف</span>
+                <p>مستخدم متزامن على منصة الذكاء الاصطناعي الإنتاجية الحالية مع الأنظمة متعددة الوسائط</p>
+            </div>
+            
+            <div class="proof-card">
+                <span class="proof-stat">+15</span>
+                <p>سنة من بناء أنظمة AI/ML من النموذج الأولي عبر التوسع والموافقة التنظيمية والخروج</p>
+            </div>
+            
+            <div class="proof-card">
+                <span class="proof-stat">70</span>
+                <p>دولة منتشرة عبرها مع الامتثال التنظيمي في المجالات الحرجة للسلامة</p>
+            </div>
+        </div>
+        
+        <div class="credentials-showcase">
+            <div class="credential-row">
+                <h4>خبرة المشغل التي تقدرها شركات رأس المال الاستثماري</h4>
+                <p>شارك في تأسيس GoBubble (إدارة محتوى الذكاء الاصطناعي)، توسع من النموذج الأولي إلى 3,500+ عميل مؤسسي عبر 70 دولة، تنقل في صندوق ICO التنظيمي، ساهم في قانون التصميم المناسب للعمر، حقق خروج نقدي بالكامل في 2024. يقود حالياً الذكاء الاصطناعي في Crown Cards (150 ألف+ مستخدم متزامن، أنظمة LLM الإنتاجية، شبكات الوكيل الموزعة).</p>
+            </div>
+            
+            <div class="credential-row">
+                <h4>الاعتمادات التقنية التي تنجو من العناية الواجبة</h4>
+                <p>حامل براءة اختراع دولية في تقنية Emotion AI. تعليم MIT/Harvard في الذكاء الاصطناعي. 15+ سنة من بناء أنظمة ML الإنتاجية بما في ذلك محركات التنبؤ في الوقت الفعلي، الذكاء الاصطناعي متعدد الوسائط (النص، الصورة، الفيديو، الصوت عبر 14+ لغة)، تكامل GPT-4 على نطاق واسع، تنسيق الوكيل الموزع.</p>
+            </div>
+            
+            <div class="credential-row">
+                <h4>أدوار استشارية استراتيجية تعترف بها شركات رأس المال الاستثماري</h4>
+                <p>قائد الذكاء الاصطناعي المشارك في FSB للابتكار الرقمي (تقديم المشورة بشأن استراتيجية الذكاء الاصطناعي الوطنية للشركات الصغيرة). لجنة الحوكمة للاتحاد العالمي للرياضات الإلكترونية. أدوار استشارية متعددة في مجالس الإدارة للشركات الناشئة المركزة على الذكاء الاصطناعي. مشاركة نشطة في صندوق رأس المال الاستثماري في تقييم الاستثمارات وإرشادات شركات المحفظة الاستراتيجية.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT SELECTION SECTION - Arabic -->
+<section id="products" class="product-selection">
+    <div class="container">
+        <h2>حدد الخدمات التي تهمك</h2>
+        <p class="selection-intro">اختر واحدة أو أكثر. سنخصص مراجعة محفظتنا وفقاً لذلك.</p>
+        
+        <div class="products-grid">
+            <div class="product-option" data-service="portfolio-diagnostic" data-calendly="https://calendly.com/henry-platten/portfolio-diagnostic">
+                <input type="checkbox" id="product-portfolio-ar" class="product-checkbox">
+                <label for="product-portfolio-ar" class="product-label">
+                    <div class="product-icon">📊</div>
+                    <h3>تشخيص المحفظة</h3>
+                    <p>مراجعة الهندسة التقنية عبر 3-5 شركات. تحديد التعرض للمخاطر الإجمالية وعدم التوافق الاستراتيجي.</p>
+                    <span class="product-price">£25-40 ألف</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="technical-dd" data-calendly="https://calendly.com/henry-platten/technical-dd">
+                <input type="checkbox" id="product-dd-ar" class="product-checkbox">
+                <label for="product-dd-ar" class="product-label">
+                    <div class="product-icon">🔍</div>
+                    <h3>العناية الواجبة التقنية قبل الاستثمار</h3>
+                    <p>تقييم ادعاءات قدرات الذكاء الاصطناعي قبل نشر رأس المال. التنبؤ بالديون التقنية للسلسلة B.</p>
+                    <span class="product-price">£15-25 ألف لكل شركة</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="portfolio-counsel" data-calendly="https://calendly.com/henry-platten/ongoing-counsel">
+                <input type="checkbox" id="product-counsel-ar" class="product-checkbox">
+                <label for="product-counsel-ar" class="product-label">
+                    <div class="product-icon">🎯</div>
+                    <h3>المشورة الاستراتيجية المستمرة</h3>
+                    <p>جلسات استراتيجية شهرية + دعم غير متزامن للقرارات العاجلة للمحفظة.</p>
+                    <span class="product-price">£200-300 ألف سنوياً</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="moat-assessment" data-calendly="https://calendly.com/henry-platten/moat-assessment">
+                <input type="checkbox" id="product-moat-ar" class="product-checkbox">
+                <label for="product-moat-ar" class="product-label">
+                    <div class="product-icon">🏰</div>
+                    <h3>تقييم الخندق مقابل المسرح</h3>
+                    <p>تحديد استثمارات الذكاء الاصطناعي التي تخلق ميزة تنافسية مستدامة مقابل مسرح الميزات المكلفة.</p>
+                    <span class="product-price">£15-20 ألف لكل شركة</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="compliance-framework" data-calendly="https://calendly.com/henry-platten/compliance">
+                <input type="checkbox" id="product-compliance-ar" class="product-checkbox">
+                <label for="product-compliance-ar" class="product-label">
+                    <div class="product-icon">⚖️</div>
+                    <h3>امتثال المحفظة لقانون الذكاء الاصطناعي الأوروبي</h3>
+                    <p>نشر إطار تنظيمي واحد عبر المحفظة. الامتثال الذي يمرر العناية الواجبة دون قتل السرعة.</p>
+                    <span class="product-price">£30-50 ألف على مستوى المحفظة</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="selection-summary" id="selectionSummary-ar" style="display: none;">
+            <h3>لقد اخترت:</h3>
+            <ul id="selectedList-ar"></ul>
+            <button class="btn-book-call" id="bookCallBtn-ar">حجز مراجعة المحفظة ←</button>
+        </div>
+        
+        <div class="selection-note">
+            <p>غير متأكد من الخدمات المناسبة؟ <a href="https://calendly.com/henry-platten/discovery-call" class="link-inline" target="_blank">احجز مكالمة اكتشاف مدتها 20 دقيقة</a> وسنرسم احتياجات محفظتك.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESS SECTION - Arabic -->
+<section class="vc-process">
+    <div class="container">
+        <h2>كيف تعمل المشاركة على مستوى المحفظة فعلياً</h2>
+        <p class="process-intro">
+            إطار تشخيصي واحد، منتشر بشكل منهجي. إشراف استراتيجي يتوسع عبر محفظتك دون زيادة التكلفة الخطية.
+        </p>
+        
+        <div class="process-timeline">
+            <div class="timeline-step">
+                <div class="step-number-circle">01</div>
+                <div class="step-content">
+                    <h3>تشخيص المحفظة (الأسابيع 1-3)</h3>
+                    <p>مراجعة الهندسة التقنية عبر 3-5 شركات. تحديد التعرض للمخاطر الإجمالية، وعدم التوافق الاستراتيجي، والديون التقنية التي ستظهر في السلسلة B. التسليم: تقييم مخاطر المحفظة مع نقاط التدخل ذات الأولوية.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="step-number-circle">02</div>
+                <div class="step-content">
+                    <h3>نشر الإطار الاستراتيجي (الشهر 2)</h3>
+                    <p>بناء دليل القرار لتطبيق على مستوى المحفظة: معايير البناء مقابل الشراء، أطر تحديد الخندق، الامتثال بدون مسرح. تدريب شركات المحفظة على التفكير الاستراتيجي الذي يحافظ على رأس المال. التسليم: أدوات تقييم قابلة لإعادة الاستخدام وأطر قرار.</p>
+                </div>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="step-number-circle">03</div>
+                <div class="step-content">
+                    <h3>الإشراف الاستراتيجي المستمر (شهرياً)</h3>
+                    <p>مستشار مدمج لقرارات الهندسة الحرجة عبر المحفظة. متاح لاجتماعات مجلس الإدارة، والعناية الواجبة التقنية قبل الاستثمار، وتدريب المؤسسين على استراتيجية الذكاء الاصطناعي. منع الأخطاء المكلفة قبل أن تتضاعف. التسليم: جلسات استراتيجية شهرية + دعم غير متزامن للقرارات العاجلة.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA SECTION - Arabic -->
+<section class="vc-cta">
+    <div class="container">
+        <h2>منع £1.7-3.2 مليون من هدر المحفظة</h2>
+        <p class="cta-subhead">
+            المشورة الاستراتيجية تكلف £200-300 ألف سنوياً. البديل هو مشاهدة 8-12 شركة تحرق بشكل مستقل £400-700 ألف لكل منها على الأطر التي لا تنجو من السلسلة B.
+        </p>
+        
+        <div class="cta-box">
+            <h3>ابدأ بتشخيص المحفظة</h3>
+            <p>مراجعة الهندسة التقنية عبر 3-5 شركات محفظة. تحديد التعرض للمخاطر الإجمالية وعدم التوافق الاستراتيجي. لا التزام. إذا لم يكشف التحليل عن مخاطر مادية، فأنت لا تدفع شيئاً.</p>
+            <a href="#products" class="btn-book-call">حدد الخدمات واحجز المكالمة ←</a>
+        </div>
+    </div>
+</section>
+
+</div>
+
 <script>
-// Smooth scroll for anchor links
+// Language switcher
+function switchLanguage(lang) {
+    const body = document.body;
+    const langBtns = document.querySelectorAll('.lang-btn');
+    const langContents = document.querySelectorAll('.lang-content');
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang === 'ar' ? 'ar' : 'en-GB';
+    
+    // Toggle RTL
+    if (lang === 'ar') {
+        body.classList.add('rtl');
+    } else {
+        body.classList.remove('rtl');
+    }
+    
+    // Update active states
+    langBtns.forEach(btn => {
+        if (btn.dataset.lang === lang) {
+            btn.classList.add('active');
+        } else {
+            btn.classList.remove('active');
+        }
+    });
+    
+    // Show/hide content
+    langContents.forEach(content => {
+        if (content.dataset.lang === lang) {
+            content.classList.add('active');
+        } else {
+            content.classList.remove('active');
+        }
+    });
+    
+    // Track language change
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'language_change', {
+            'event_category': 'engagement',
+            'event_label': lang,
+            'page_type': 'vc_landing'
+        });
+    }
+}
+
+// Product selection functionality (both languages)
+function initProductSelection(lang) {
+    const suffix = lang === 'ar' ? '-ar' : '-en';
+    const productCheckboxes = document.querySelectorAll(`#product-portfolio${suffix}, #product-dd${suffix}, #product-counsel${suffix}, #product-moat${suffix}, #product-compliance${suffix}`);
+    const selectionSummary = document.getElementById(`selectionSummary${suffix}`);
+    const selectedList = document.getElementById(`selectedList${suffix}`);
+    const bookCallBtn = document.getElementById(`bookCallBtn${suffix}`);
+    
+    let selectedServices = [];
+    
+    productCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            updateSelection();
+            
+            // Track product selections
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'product_selection', {
+                    'event_category': 'engagement',
+                    'event_label': this.parentElement.dataset.service,
+                    'value': this.checked ? 1 : 0,
+                    'language': lang
+                });
+            }
+        });
+    });
+    
+    function updateSelection() {
+        selectedServices = [];
+        const selectedOptions = document.querySelectorAll(`.product-checkbox:checked`);
+        
+        // Filter for current language
+        const currentLangOptions = Array.from(selectedOptions).filter(opt => 
+            opt.id.endsWith(suffix)
+        );
+        
+        if (currentLangOptions.length === 0) {
+            selectionSummary.style.display = 'none';
+            return;
+        }
+        
+        selectionSummary.style.display = 'block';
+        selectedList.innerHTML = '';
+        
+        currentLangOptions.forEach(option => {
+            const label = option.nextElementSibling;
+            const serviceName = label.querySelector('h3').textContent;
+            const serviceData = option.parentElement.dataset.service;
+            const calendlyUrl = option.parentElement.dataset.calendly;
+            
+            selectedServices.push({
+                name: serviceName,
+                service: serviceData,
+                calendlyUrl: calendlyUrl
+            });
+            
+            const li = document.createElement('li');
+            li.textContent = serviceName;
+            selectedList.appendChild(li);
+        });
+    }
+    
+    if (bookCallBtn) {
+        bookCallBtn.addEventListener('click', function() {
+            // Track booking click
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'calendly_click', {
+                    'event_category': 'conversion',
+                    'event_label': 'book_call_vc',
+                    'services_count': selectedServices.length,
+                    'language': lang
+                });
+            }
+            
+            routeToCalendly();
+        });
+    }
+    
+    function routeToCalendly() {
+        if (selectedServices.length === 1) {
+            window.open(selectedServices[0].calendlyUrl, '_blank');
+        } else {
+            const generalUrl = 'https://calendly.com/henry-platten/portfolio-review';
+            const serviceNames = selectedServices.map(s => s.name).join(', ');
+            window.open(`${generalUrl}?a1=${encodeURIComponent(serviceNames)}`, '_blank');
+        }
+    }
+}
+
+// Initialize for both languages
+initProductSelection('en');
+initProductSelection('ar');
+
+// CTA click tracking
+document.querySelectorAll('.cta-primary, .btn-book-call').forEach(button => {
+    button.addEventListener('click', function(e) {
+        const lang = document.body.classList.contains('rtl') ? 'ar' : 'en';
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'cta_click', {
+                'event_category': 'engagement',
+                'event_label': this.textContent.trim(),
+                'language': lang
+            });
+        }
+    });
+});
+
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
