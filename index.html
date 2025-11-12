@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Prevent £400-700K in Wasted AI Spend | Strategic AI Advisory</title>
     <meta name="description" content="VCs and Series A/B founders: Stop following enterprise AI frameworks that will bankrupt you. Operator-tested strategic counsel that preserves runway.">
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX', {
+            'page_title': 'Main Landing - Control',
+            'page_variant': 'control',
+            'page_type': 'main_landing'
+        });
+    </script>
+    
     <style>
         * {
             margin: 0;
@@ -496,10 +510,193 @@
             font-size: 15px;
         }
 
+        /* PRODUCT SELECTION SECTION */
+        .product-selection {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .product-selection h2 {
+            text-align: center;
+            font-size: 40px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .selection-intro {
+            text-align: center;
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 60px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .product-option {
+            position: relative;
+        }
+
+        .product-checkbox {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .product-label {
+            display: block;
+            background: #f8f9fa;
+            border: 3px solid #e9ecef;
+            border-radius: 12px;
+            padding: 32px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .product-checkbox:checked + .product-label {
+            background: white;
+            border-color: #0d6efd;
+            box-shadow: 0 8px 24px rgba(13, 110, 253, 0.15);
+            transform: translateY(-4px);
+        }
+
+        .product-checkbox:checked + .product-label::after {
+            content: "✓";
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 32px;
+            height: 32px;
+            background: #198754;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .product-label:hover {
+            border-color: #0d6efd;
+            background: white;
+        }
+
+        .product-icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+
+        .product-label h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #212529;
+        }
+
+        .product-label p {
+            color: #495057;
+            line-height: 1.6;
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .product-price {
+            display: inline-block;
+            background: #e7f3ff;
+            color: #0d6efd;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .selection-summary {
+            background: #e7f3ff;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #0d6efd;
+            margin-bottom: 32px;
+        }
+
+        .selection-summary h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #212529;
+        }
+
+        #selectedList {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 24px;
+        }
+
+        #selectedList li {
+            font-size: 16px;
+            padding: 8px 0;
+            color: #495057;
+        }
+
+        #selectedList li::before {
+            content: "✓ ";
+            color: #198754;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .btn-book-call {
+            display: inline-block;
+            background: #0d6efd;
+            color: white;
+            padding: 16px 48px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-book-call:hover {
+            background: #0b5ed7;
+            transform: translateY(-2px);
+        }
+
+        .selection-note {
+            text-align: center;
+            padding: 32px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .selection-note p {
+            font-size: 16px;
+            color: #495057;
+            margin: 0;
+        }
+
+        .link-inline {
+            color: #0d6efd;
+            text-decoration: underline;
+            font-weight: 600;
+        }
+
+        .link-inline:hover {
+            color: #0b5ed7;
+        }
+
         /* PROCESS SECTION */
         .process-section {
             padding: 80px 0;
-            background: white;
+            background: #f8f9fa;
         }
 
         .process-section h2 {
@@ -551,155 +748,6 @@
             line-height: 1.7;
         }
 
-        /* CTA SECTION */
-        .cta-section {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            color: white;
-        }
-
-        .cta-content {
-            text-align: center;
-        }
-
-        .cta-content h2 {
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 24px;
-        }
-
-        .cta-content > p {
-            font-size: 20px;
-            margin-bottom: 60px;
-            opacity: 0.9;
-        }
-
-        .cta-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .cta-option {
-            background: rgba(255,255,255,0.05);
-            padding: 40px;
-            border-radius: 12px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .cta-option h3 {
-            font-size: 28px;
-            margin-bottom: 16px;
-        }
-
-        .cta-option p {
-            font-size: 16px;
-            line-height: 1.6;
-            margin-bottom: 24px;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: #0d6efd;
-            color: white;
-            padding: 14px 32px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .cta-button:hover {
-            background: #0b5ed7;
-            transform: translateY(-2px);
-        }
-
-        /* CONTACT SECTION */
-        .contact-section {
-            padding: 80px 0;
-            background: #f8f9fa;
-        }
-
-        .contact-section h2 {
-            text-align: center;
-            font-size: 40px;
-            font-weight: 800;
-            margin-bottom: 60px;
-        }
-
-        .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
-            background: white;
-            padding: 48px;
-            border-radius: 12px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #212529;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #dee2e6;
-            border-radius: 8px;
-            font-size: 16px;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #0d6efd;
-        }
-
-        .submit-button {
-            width: 100%;
-            background: #0d6efd;
-            color: white;
-            padding: 16px;
-            border: none;
-            border-radius: 8px;
-            font-size: 18px;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .submit-button:hover {
-            background: #0b5ed7;
-            transform: translateY(-2px);
-        }
-
-        .form-note {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #6c757d;
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
@@ -718,14 +766,6 @@
                 font-weight: 700;
                 background: #212529;
                 color: white;
-            }
-            
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta-options {
-                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -926,158 +966,238 @@
 
         <!-- VC CARDS -->
         <div class="support-grid" data-role-view="vc">
-            <div class="support-card" data-area="portfolio-optimization">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">📊</div>
                 <h3>Portfolio-Level AI Risk Management</h3>
-                <p>Prevent £1.7-3.2M aggregate runway waste across 8-12 portfolio companies. Strategic oversight framework deployed systematically, not company-by-company firefighting.</p>
+                <p>Prevent £1.7-3.2M aggregate runway waste across 8-12 portfolio companies. Strategic oversight framework deployed systematically.</p>
             </div>
             
-            <div class="support-card" data-area="due-diligence">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🔍</div>
                 <h3>Technical Due Diligence for AI Companies</h3>
-                <p>Evaluate AI capability claims before investment. Distinguish production-grade systems from demo theater. Architecture review that predicts Series B technical debt, not just validates current state.</p>
+                <p>Evaluate AI capability claims before investment. Distinguish production-grade systems from demo theater.</p>
             </div>
 
-            <div class="support-card" data-area="moat-assessment">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🏰</div>
                 <h3>Defensibility Assessment: Moat vs Theater</h3>
-                <p>Identify which AI investments create sustainable advantage versus expensive feature replication. Map data loops, switching costs, and competitive dynamics. Know what survives copycats.</p>
+                <p>Identify which AI investments create sustainable advantage versus expensive feature replication.</p>
             </div>
 
-            <div class="support-card" data-area="portfolio-governance">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">⚖️</div>
                 <h3>EU AI Act Portfolio Compliance</h3>
-                <p>Deploy regulatory frameworks across portfolio without killing velocity. Risk classification, audit trails, board reporting that passes institutional due diligence. One framework, multiple companies.</p>
+                <p>Deploy regulatory frameworks across portfolio without killing velocity. One framework, multiple companies.</p>
             </div>
 
-            <div class="support-card" data-area="strategic-advisor">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🎯</div>
                 <h3>On-Demand Strategic Counsel</h3>
-                <p>Embedded adviser for AI-focused investments. Architecture decisions, build-vs-buy guidance, talent assessment. Available for board meetings, founder coaching, investor updates. Portfolio companies get operator experience without permanent hire.</p>
+                <p>Embedded adviser for AI-focused investments. Architecture decisions, build-vs-buy guidance, talent assessment.</p>
             </div>
         </div>
 
         <!-- ALL CAPABILITIES CARDS -->
         <div class="support-grid" data-role-view="all">
-            <div class="support-card" data-area="runway-preservation">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">💰</div>
                 <h3>Strategic Waste Prevention</h3>
-                <p>Identify £400-700K in avoidable technical spend. Prevent enterprise governance frameworks killing runway before commercial validation. Operator-tested decisions, not McKinsey theory.</p>
+                <p>Identify £400-700K in avoidable technical spend. Prevent enterprise governance frameworks killing runway.</p>
             </div>
             
-            <div class="support-card" data-area="moat-diagnostic">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🏰</div>
                 <h3>AI Moat vs Feature Theater</h3>
-                <p>Distinguish defensible AI capability from expensive technical debt. Build competitive advantage that survives Series B scrutiny, not features competitors replicate in 90 days.</p>
+                <p>Distinguish defensible AI capability from expensive technical debt. Build competitive advantage that survives Series B scrutiny.</p>
             </div>
             
-            <div class="support-card" data-area="fractional-cao">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">⚡</div>
                 <h3>Fractional Chief AI Officer</h3>
-                <p>Senior AI leadership without £130-160K permanent hire. Production LLM systems, technical architecture, team oversight. Get operator experience at adviser economics.</p>
+                <p>Senior AI leadership without £130-160K permanent hire. Production LLM systems, technical architecture, team oversight.</p>
             </div>
 
-            <div class="support-card" data-area="technical-architecture">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🔧</div>
                 <h3>Production Architecture at Startup Scale</h3>
-                <p>Real-time systems serving 100K+ users without enterprise overhead. Multi-modal AI, distributed agents, GPT-4 integration. Built for traction validation, not imagined scale.</p>
+                <p>Real-time systems serving 100K+ users without enterprise overhead. Multi-modal AI, distributed agents, GPT-4 integration.</p>
             </div>
             
-            <div class="support-card" data-area="regulatory-navigation">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">⚖️</div>
                 <h3>EU AI Act & Safety Compliance</h3>
-                <p>Navigate regulatory requirements without governance theater. ICO sandbox experience, Age Appropriate Design Code contribution. Compliance that passes due diligence without killing velocity.</p>
+                <p>Navigate regulatory requirements without governance theater. ICO sandbox experience, Age Appropriate Design Code contribution.</p>
             </div>
             
-            <div class="support-card" data-area="portfolio-optimization">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">📊</div>
                 <h3>Portfolio-Level AI Strategy</h3>
-                <p>For VCs: Prevent aggregate £1.7-3.2M runway waste across portfolio companies. Technical due diligence, capability assessment, strategic guidance across multiple investments simultaneously.</p>
+                <p>For VCs: Prevent aggregate £1.7-3.2M runway waste across portfolio companies. Technical due diligence, capability assessment.</p>
             </div>
 
-            <div class="support-card" data-area="build-buy-decisions">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🎯</div>
                 <h3>Build vs Buy with Operator Context</h3>
-                <p>Make platform decisions grounded in scaling reality, not vendor promises. When to rent infrastructure, when to build competitive moat. Avoid technical lock-in that kills optionality at Series B.</p>
+                <p>Make platform decisions grounded in scaling reality, not vendor promises. Avoid technical lock-in that kills optionality.</p>
             </div>
 
-            <div class="support-card" data-area="investor-narrative">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">📈</div>
                 <h3>AI Capability → Investor Story</h3>
-                <p>Translate technical architecture into fundraising narrative. Align AI roadmap with Series A/B value creation story. Make technical decisions that strengthen valuation defence, not undermine it.</p>
+                <p>Translate technical architecture into fundraising narrative. Align AI roadmap with Series A/B value creation story.</p>
             </div>
 
-            <div class="support-card" data-area="evaluation-frameworks">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🔬</div>
                 <h3>AI Evaluation Without Enterprise Theater</h3>
-                <p>Performance measurement frameworks for pre-PMF stage. Know what's working before burning £200K proving it. Testing protocols that generate investment-grade evidence, not vanity metrics.</p>
+                <p>Performance measurement frameworks for pre-PMF stage. Testing protocols that generate investment-grade evidence.</p>
             </div>
         </div>
 
         <!-- CEO/CTO CARDS -->
         <div class="support-grid" data-role-view="ceo">
-            <div class="support-card" data-area="runway-preservation-founder">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">💰</div>
                 <h3>Prevent £400-700K in Wasted Technical Spend</h3>
-                <p>Stop building enterprise AI governance before you've validated commercial demand. Operator-tested decisions that preserve runway whilst building defensible capability. McKinsey frameworks will bankrupt you.</p>
+                <p>Stop building enterprise AI governance before you've validated commercial demand. Operator-tested decisions that preserve runway.</p>
             </div>
             
-            <div class="support-card" data-area="fractional-cao-founder">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">⚡</div>
                 <h3>Fractional Chief AI Officer</h3>
-                <p>Senior AI leadership at adviser economics. Ship production LLM systems, architect technical roadmap, oversee contractors/team. £130-160K capability without permanent hire or equity dilution.</p>
+                <p>Senior AI leadership at adviser economics. Ship production LLM systems, architect technical roadmap, oversee contractors/team.</p>
             </div>
 
-            <div class="support-card" data-area="production-systems">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🔧</div>
                 <h3>Ship Production AI Systems Fast</h3>
-                <p>Multi-modal AI serving 100K+ concurrent users. GPT-4 integration, distributed agents, real-time prediction engines. Built for traction proof, not enterprise scale you haven't earned yet.</p>
+                <p>Multi-modal AI serving 100K+ concurrent users. GPT-4 integration, distributed agents, real-time prediction engines.</p>
             </div>
             
-            <div class="support-card" data-area="build-buy-founder">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🎯</div>
                 <h3>Build vs Buy Decisions That Preserve Optionality</h3>
-                <p>When to rent infrastructure versus build competitive moat. Avoid vendor lock-in that kills you at Series B. Make platform choices grounded in scaling reality, not sales decks.</p>
+                <p>When to rent infrastructure versus build competitive moat. Avoid vendor lock-in that kills you at Series B.</p>
             </div>
 
-            <div class="support-card" data-area="moat-building">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">🏰</div>
                 <h3>Build Defensible AI, Not Feature Theater</h3>
-                <p>Identify where AI creates genuine competitive advantage versus expensive technical debt. Data loops that compound, switching costs that stick. Features competitors can't replicate in 90 days.</p>
+                <p>Identify where AI creates genuine competitive advantage versus expensive technical debt. Data loops that compound.</p>
             </div>
 
-            <div class="support-card" data-area="investor-story-founder">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">📈</div>
                 <h3>Technical Roadmap → Fundraising Story</h3>
-                <p>Align AI architecture with Series A/B value creation narrative. Make technical decisions that strengthen valuation defence. Translate production systems into investor-grade competitive positioning.</p>
+                <p>Align AI architecture with Series A/B value creation narrative. Make technical decisions that strengthen valuation defence.</p>
             </div>
 
-            <div class="support-card" data-area="compliance-founder">
+            <div class="support-card">
                 <div class="checkmark">✓</div>
                 <div class="icon">⚖️</div>
                 <h3>EU AI Act Compliance Without Killing Velocity</h3>
-                <p>Navigate regulatory requirements at startup scale. Risk classification, audit trails, board reporting. Compliance that passes due diligence without governance theater that burns runway.</p>
+                <p>Navigate regulatory requirements at startup scale. Risk classification, audit trails, board reporting.</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT SELECTION SECTION -->
+<section class="product-selection">
+    <div class="container">
+        <h2>Select Services You're Interested In</h2>
+        <p class="selection-intro">Choose one or more. We'll customize our conversation accordingly.</p>
+        
+        <div class="products-grid">
+            <div class="product-option" data-service="portfolio-diagnostic" data-calendly="https://calendly.com/henry-platten/portfolio-diagnostic">
+                <input type="checkbox" id="product-portfolio" class="product-checkbox">
+                <label for="product-portfolio" class="product-label">
+                    <div class="product-icon">📊</div>
+                    <h3>Portfolio Diagnostic</h3>
+                    <p>Technical architecture review across 3-5 companies</p>
+                    <span class="product-price">£25-40K</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="technical-dd" data-calendly="https://calendly.com/henry-platten/technical-dd">
+                <input type="checkbox" id="product-dd" class="product-checkbox">
+                <label for="product-dd" class="product-label">
+                    <div class="product-icon">🔍</div>
+                    <h3>Pre-Investment Due Diligence</h3>
+                    <p>Evaluate AI capability claims before capital deployment</p>
+                    <span class="product-price">£15-25K per company</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="portfolio-counsel" data-calendly="https://calendly.com/henry-platten/ongoing-counsel">
+                <input type="checkbox" id="product-counsel" class="product-checkbox">
+                <label for="product-counsel" class="product-label">
+                    <div class="product-icon">🎯</div>
+                    <h3>Ongoing Strategic Counsel</h3>
+                    <p>Monthly strategic sessions + async support</p>
+                    <span class="product-price">£200-300K annually</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="fractional-cao" data-calendly="https://calendly.com/henry-platten/fractional-cao">
+                <input type="checkbox" id="product-cao" class="product-checkbox">
+                <label for="product-cao" class="product-label">
+                    <div class="product-icon">⚡</div>
+                    <h3>Fractional Chief AI Officer</h3>
+                    <p>Senior AI leadership at advisor economics</p>
+                    <span class="product-price">£15-25K/month</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="runway-preservation" data-calendly="https://calendly.com/henry-platten/strategy-session">
+                <input type="checkbox" id="product-runway" class="product-checkbox">
+                <label for="product-runway" class="product-label">
+                    <div class="product-icon">💰</div>
+                    <h3>Strategic Waste Prevention</h3>
+                    <p>60-minute diagnostic session</p>
+                    <span class="product-price">Free initial session</span>
+                </label>
+            </div>
+            
+            <div class="product-option" data-service="production-systems" data-calendly="https://calendly.com/henry-platten/technical-consultation">
+                <input type="checkbox" id="product-production" class="product-checkbox">
+                <label for="product-production" class="product-label">
+                    <div class="product-icon">🔧</div>
+                    <h3>Production AI Systems</h3>
+                    <p>Ship LLM systems in 90 days</p>
+                    <span class="product-price">Project-based</span>
+                </label>
+            </div>
+        </div>
+        
+        <div class="selection-summary" id="selectionSummary" style="display: none;">
+            <h3>You've Selected:</h3>
+            <ul id="selectedList"></ul>
+            <button class="btn-book-call" id="bookCallBtn">Book Strategy Call →</button>
+        </div>
+        
+        <div class="selection-note">
+            <p>Not sure which services fit? <a href="https://calendly.com/henry-platten/discovery-call" class="link-inline" target="_blank">Book a 15-minute discovery call</a> and we'll figure it out together.</p>
         </div>
     </div>
 </section>
@@ -1091,94 +1211,25 @@
             <div class="process-step">
                 <div class="step-number">01</div>
                 <h3>Diagnostic (Week 1)</h3>
-                <p>Architecture review, roadmap assessment, commercial defence audit. Identify where you're building moat versus burning runway. Deliverable: 15-page strategic analysis with prioritised recommendations.</p>
+                <p>Architecture review, roadmap assessment, commercial defence audit. Identify where you're building moat versus burning runway.</p>
             </div>
             
             <div class="process-step">
                 <div class="step-number">02</div>
                 <h3>Decision Framework (Weeks 2-4)</h3>
-                <p>Build-vs-buy decisions, technical architecture choices, team structure guidance. Every recommendation grounded in what breaks at startup scale, not enterprise theory. Deliverable: Decision playbook with risk mitigation strategies.</p>
+                <p>Build-vs-buy decisions, technical architecture choices, team structure guidance. Every recommendation grounded in what breaks at startup scale.</p>
             </div>
             
             <div class="process-step">
                 <div class="step-number">03</div>
                 <h3>Ongoing Strategic Oversight (Monthly)</h3>
-                <p>Architecture reviews, board prep, technical due diligence for partnerships. Available for critical decisions without permanent hire commitment. Deliverable: Monthly strategic counsel sessions + async support.</p>
+                <p>Architecture reviews, board prep, technical due diligence for partnerships. Available for critical decisions without permanent hire commitment.</p>
             </div>
         </div>
         
         <div class="process-note">
-            <p><strong>For VCs:</strong> Portfolio-level engagement scales this across multiple companies. One diagnostic framework, deployed systematically. Aggregate runway preservation that justifies advisory economics immediately.</p>
+            <p><strong>For VCs:</strong> Portfolio-level engagement scales this across multiple companies. One diagnostic framework, deployed systematically.</p>
         </div>
-    </div>
-</section>
-
-<!-- FINAL CTA SECTION -->
-<section class="cta-section">
-    <div class="container">
-        <div class="cta-content">
-            <h2>Prevent the £400-700K Mistake Before You Make It</h2>
-            <p>Strategic counsel costs £200-300K annually. The alternative is watching consultants bill £500K+ for frameworks that don't survive Series B diligence.</p>
-            
-            <div class="cta-options">
-                <div class="cta-option">
-                    <h3>For VCs</h3>
-                    <p>Portfolio-level diagnostic across 3-5 companies. Identify aggregate risk exposure and strategic misalignment. No obligation.</p>
-                    <a href="#contact" class="cta-button">Request Portfolio Review</a>
-                </div>
-                
-                <div class="cta-option">
-                    <h3>For Founders</h3>
-                    <p>60-minute strategy session. Pressure-test your AI roadmap against scaling reality. Identify the decision that's most likely to waste runway.</p>
-                    <a href="#contact" class="cta-button">Book Strategy Session</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- CONTACT FORM -->
-<section id="contact" class="contact-section">
-    <div class="container">
-        <h2>Start the Conversation</h2>
-        <form class="contact-form">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-            </div>
-            
-            <div class="form-group">
-                <label for="role">I am a...</label>
-                <select id="role" name="role" required>
-                    <option value="">Select your role</option>
-                    <option value="vc">VC with AI portfolio companies</option>
-                    <option value="ceo">CEO/Founder (Pre-seed to Series B)</option>
-                    <option value="cto">CTO/Technical Co-founder</option>
-                    <option value="other">Other</option>
-                </select>
-            </div>
-            
-            <div class="form-group">
-                <label for="company">Company / Fund</label>
-                <input type="text" id="company" name="company" required>
-            </div>
-            
-            <div class="form-group">
-                <label for="challenge">What's the immediate strategic challenge?</label>
-                <textarea id="challenge" name="challenge" rows="4" placeholder="e.g., Evaluating build-vs-buy for our AI roadmap, concerned about runway burn rate on current technical strategy, need due diligence on AI acquisition target"></textarea>
-            </div>
-            
-            <button type="submit" class="submit-button">Request Initial Conversation</button>
-            
-            <p class="form-note">Expect response within 24 hours. First conversation is exploratory, no sales pressure.</p>
-        </form>
     </div>
 </section>
 
@@ -1205,6 +1256,15 @@ function updateView(value) {
     
     document.querySelector(`[data-role-view="${viewType}"]`).classList.add('active');
     currentView.textContent = viewText;
+    
+    // Track slider changes
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'slider_change', {
+            'event_category': 'engagement',
+            'event_label': viewText,
+            'value': value
+        });
+    }
 }
 
 updateView(5);
@@ -1221,7 +1281,95 @@ document.querySelectorAll('.marker').forEach(marker => {
     });
 });
 
-// Smooth scroll for anchor links
+// Product selection functionality
+const productCheckboxes = document.querySelectorAll('.product-checkbox');
+const selectionSummary = document.getElementById('selectionSummary');
+const selectedList = document.getElementById('selectedList');
+const bookCallBtn = document.getElementById('bookCallBtn');
+
+let selectedServices = [];
+
+productCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        updateSelection();
+        
+        // Track product selections
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'product_selection', {
+                'event_category': 'engagement',
+                'event_label': this.parentElement.dataset.service,
+                'value': this.checked ? 1 : 0
+            });
+        }
+    });
+});
+
+function updateSelection() {
+    selectedServices = [];
+    const selectedOptions = document.querySelectorAll('.product-checkbox:checked');
+    
+    if (selectedOptions.length === 0) {
+        selectionSummary.style.display = 'none';
+        return;
+    }
+    
+    selectionSummary.style.display = 'block';
+    selectedList.innerHTML = '';
+    
+    selectedOptions.forEach(option => {
+        const label = option.nextElementSibling;
+        const serviceName = label.querySelector('h3').textContent;
+        const serviceData = option.parentElement.dataset.service;
+        const calendlyUrl = option.parentElement.dataset.calendly;
+        
+        selectedServices.push({
+            name: serviceName,
+            service: serviceData,
+            calendlyUrl: calendlyUrl
+        });
+        
+        const li = document.createElement('li');
+        li.textContent = serviceName;
+        selectedList.appendChild(li);
+    });
+}
+
+bookCallBtn.addEventListener('click', function() {
+    // Track booking click
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'calendly_click', {
+            'event_category': 'conversion',
+            'event_label': 'book_call',
+            'services_count': selectedServices.length
+        });
+    }
+    
+    routeToCalendly();
+});
+
+function routeToCalendly() {
+    if (selectedServices.length === 1) {
+        window.open(selectedServices[0].calendlyUrl, '_blank');
+    } else {
+        const generalUrl = 'https://calendly.com/henry-platten/strategy-call';
+        const serviceNames = selectedServices.map(s => s.name).join(', ');
+        window.open(`${generalUrl}?a1=${encodeURIComponent(serviceNames)}`, '_blank');
+    }
+}
+
+// CTA click tracking
+document.querySelectorAll('.cta-primary, .cta-button, .btn-book-call').forEach(button => {
+    button.addEventListener('click', function(e) {
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'cta_click', {
+                'event_category': 'engagement',
+                'event_label': this.textContent.trim()
+            });
+        }
+    });
+});
+
+// Smooth scroll
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
