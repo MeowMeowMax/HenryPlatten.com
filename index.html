@@ -21,45 +21,11 @@
     
     <!-- Disable Developer Tools -->
     <script>
-        // Disable right-click
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-            alert('Privacy is important so as a result we keep our backend code private');
-        });
-        
-        // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
-        document.addEventListener('keydown', function(e) {
-            // F12
-            if (e.keyCode === 123) {
-                e.preventDefault();
-                alert('Privacy is important so as a result we keep our backend code private');
-                return false;
-            }
-            // Ctrl+Shift+I (DevTools)
-            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
-                e.preventDefault();
-                alert('Privacy is important so as a result we keep our backend code private');
-                return false;
-            }
-            // Ctrl+Shift+J (Console)
-            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
-                e.preventDefault();
-                alert('Privacy is important so as a result we keep our backend code private');
-                return false;
-            }
-            // Ctrl+U (View Source)
-            if (e.ctrlKey && e.keyCode === 85) {
-                e.preventDefault();
-                alert('Privacy is important so as a result we keep our backend code private');
-                return false;
-            }
-        });
-        
         // Detect DevTools opening
         (function() {
             const devtools = /./;
             devtools.toString = function() {
-                alert('Privacy is important so as a result we keep our backend code private');
+                alert('Hi there, privacy is important so as a result we keep our backend code private');
             }
             console.log('%c', devtools);
         })();
