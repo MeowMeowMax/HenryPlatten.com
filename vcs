@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prevent £1.7-3.2M Portfolio Waste | VC AI Strategy Adviser</title>
+    <title>Prevent £1.7-3.2M Portfolio Waste | VC AI Strategy Lead</title>
     <meta name="description" content="Portfolio-level AI risk management for VCs. Prevent aggregate runway waste across your AI investments through operator-tested strategic oversight.">
     
     <!-- Google Analytics 4 -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-24E1RS60R8"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'G-XXXXXXXXXX', {
-            'page_title': 'VCs Landing - Control',
+        gtag('config', 'G-24E1RS60R8', {
+            'page_title': 'Main Landing - Control',
             'page_variant': 'control',
-            'page_type': 'vc_landing'
+            'page_type': 'main_landing'
         });
     </script>
     
@@ -876,7 +876,7 @@
     <div class="container">
         <h2>The Pattern Destroying Portfolio Value</h2>
         <p class="problem-intro">
-            Your Series A companies raise capital, hire McKinsey or Accenture, implement enterprise governance frameworks, and burn 40% of runway before realising their AI capability isn't defensible. This isn't isolated. It's systematic.
+            Series A companies raise capital, implement enterprise governance frameworks, and burn 40% of runway before realising their AI capability isn't defensible. This isn't isolated. It's systematic.
         </p>
         
         <div class="portfolio-risk-grid">
@@ -888,14 +888,14 @@
             
             <div class="risk-card">
                 <span class="risk-icon">💸</span>
-                <h3>Governance Theater Burning Runway</h3>
+                <h3>Governance Hype Burning Runway</h3>
                 <p>£400-700K spent on risk committees, documentation processes, and consultant fees designed for Fortune 500 scale. Zero impact on competitive moat or market traction.</p>
             </div>
             
             <div class="risk-card">
                 <span class="risk-icon">🎭</span>
-                <h3>Demo Theater vs Production Systems</h3>
-                <p>AI capabilities that look impressive in board presentations but collapse under real user load. No data loops, no switching costs, no defensibility. Just expensive technical theatre.</p>
+                <h3>Demo vs Production</h3>
+                <p>AI capabilities that look impressive in board presentations but collapse under real user load. No data loops, no switching costs, no defensibility. Just expensive technical fluff.</p>
             </div>
         </div>
         
@@ -920,7 +920,7 @@
             </div>
             
             <p class="conclusion">
-                Strategic counsel costs £200-300K annually across the portfolio. That investment prevents £1.7-3.2M in aggregate runway waste. The alternative is watching each company independently make the same expensive mistakes whilst consultants collect their fees.
+                Strategic counsel across the portfolio. That investment prevents £1.7-3.2M in aggregate runway waste. The alternative is watching each company independently make the same expensive mistakes whilst consultants collect their fees.
             </p>
         </div>
     </div>
@@ -941,19 +941,19 @@
             <div class="capability-card">
                 <span class="capability-icon">🔍</span>
                 <h3>Pre-Investment Technical Due Diligence</h3>
-                <p>Evaluate AI capability claims before capital deployment. Distinguish production-grade systems from demo theater. Predict Series B technical debt whilst deals are still in diligence.</p>
+                <p>Evaluate AI capability claims before capital deployment. Distinguish production-grade systems from demo hype. Predict Series B technical debt whilst deals are still in diligence.</p>
             </div>
             
             <div class="capability-card">
                 <span class="capability-icon">🏰</span>
-                <h3>Moat vs Theater Assessment</h3>
+                <h3>Moat vs Fluff Assessment</h3>
                 <p>Identify which investments create sustainable competitive advantage versus expensive feature replication. Map data loops, switching costs, and defensive dynamics. Know what survives copycats.</p>
             </div>
             
             <div class="capability-card">
                 <span class="capability-icon">⚖️</span>
                 <h3>Portfolio Compliance Framework</h3>
-                <p>EU AI Act readiness deployed across portfolio without killing velocity. One regulatory approach adapted to multiple companies. Compliance that passes institutional due diligence without governance theater.</p>
+                <p>EU AI Act/Global laws readiness deployed across portfolio without killing velocity. One regulatory approach adapted to multiple companies. Compliance that passes institutional due diligence without governance delays.</p>
             </div>
             
             <div class="capability-card">
@@ -965,7 +965,7 @@
             <div class="capability-card">
                 <span class="capability-icon">💰</span>
                 <h3>Runway Preservation Strategy</h3>
-                <p>Identify £400-700K in preventable technical spend per company. Stop enterprise frameworks that bankrupt startups. Make strategic decisions grounded in what actually breaks at Series A scale.</p>
+                <p>Identify up to £400-700K in preventable technical spend per company. Stop enterprise frameworks that bankrupt startups. Make strategic decisions grounded in what actually breaks at Series A scale.</p>
             </div>
         </div>
     </div>
@@ -986,7 +986,7 @@
                 <ul class="comparison-list">
                     <li>Enterprise frameworks designed for Fortune 500</li>
                     <li>Junior associates delivering recommendations</li>
-                    <li>Governance theater that passes board meetings</li>
+                    <li>Governance hype that passes board meetings</li>
                     <li>£500K+ per engagement, per company</li>
                     <li>Success measured by deliverables completed</li>
                     <li>No skin in game beyond invoice payment</li>
@@ -998,9 +998,9 @@
                 <h3>What Your Portfolio Actually Needs</h3>
                 <ul class="comparison-list">
                     <li>Decisions grounded in what breaks at startup scale</li>
-                    <li>Direct operator who scaled to 1M+ users personally</li>
+                    <li>Direct operator who scaled AI into +70 countries personally</li>
                     <li>Commercial defence that survives Series B diligence</li>
-                    <li>£200-300K annually across entire portfolio</li>
+                    <li>Service across entire portfolio</li>
                     <li>Success measured by runway preserved, exits achieved</li>
                     <li>Reputation tied to portfolio company outcomes</li>
                 </ul>
@@ -1016,13 +1016,13 @@
         
         <div class="proof-grid">
             <div class="proof-card">
-                <span class="proof-stat">1M+</span>
-                <p>Users on AI systems I built and scaled across 70 countries before successful exit</p>
+                <span class="proof-stat">40M+</span>
+                <p>Messages on AI systems I built and scaled, plus exit</p>
             </div>
             
             <div class="proof-card">
-                <span class="proof-stat">150K+</span>
-                <p>Concurrent users on current production AI platform with multi-modal systems</p>
+                <span class="proof-stat">20+</span>
+                <p>International patents and patenable proprietary AI designed, built, and launched</p>
             </div>
             
             <div class="proof-card">
@@ -1031,15 +1031,15 @@
             </div>
             
             <div class="proof-card">
-                <span class="proof-stat">70</span>
-                <p>Countries deployed across with regulatory compliance in safety-critical domains</p>
+                <span class="proof-stat">MIT & Harvard</span>
+                <p>Training in AI and Data Science</p>
             </div>
         </div>
         
         <div class="credentials-showcase">
             <div class="credential-row">
                 <h4>Operator Experience That VCs Value</h4>
-                <p>Co-founded GoBubble (AI content moderation), scaled from prototype to 3,500+ enterprise clients across 70 countries, navigated ICO regulatory sandbox, contributed to Age Appropriate Design Code, achieved all-cash exit in 2024. Currently leading AI at Crown Cards (150K+ concurrent users, production LLM systems, distributed agent networks).</p>
+                <p>Multiple AI products successfully scaled from prototype to enterprise clients across 70 countries, navigated ICO regulatory sandbox, contributed to Age Appropriate Design Code, achieved multiple exits.</p>
             </div>
             
             <div class="credential-row">
@@ -1049,7 +1049,7 @@
             
             <div class="credential-row">
                 <h4>Strategic Advisory Roles VCs Recognise</h4>
-                <p>FSB Co-Opted AI Lead for Digital Innovation (advising national AI strategy for small businesses). Global Esports Federation Governance Committee. Multiple board advisory roles for AI-focused scale-ups. Active VC fund involvement in investment evaluation and portfolio company strategic guidance.</p>
+                <p>Experience supportuing funds from creating 10-year AI investment manadate (looking at robotics, cybersecurity, and public service), to portfolio company strategic guidance. AI Lead for Digital Innovation (advising AI strategy). Multiple board advisory roles for AI-focused scale-ups.</p>
             </div>
         </div>
     </div>
@@ -1062,53 +1062,53 @@
         <p class="selection-intro">Choose one or more. We'll customize our portfolio review accordingly.</p>
         
         <div class="products-grid">
-            <div class="product-option" data-service="portfolio-diagnostic" data-calendly="https://calendly.com/henry-platten/portfolio-diagnostic">
+            <div class="product-option" data-service="portfolio-diagnostic" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-portfolio-en" class="product-checkbox">
                 <label for="product-portfolio-en" class="product-label">
                     <div class="product-icon">📊</div>
                     <h3>Portfolio Diagnostic</h3>
                     <p>Technical architecture review across 3-5 companies. Identify aggregate risk exposure and strategic misalignment.</p>
-                    <span class="product-price">£25-40K</span>
+                    <span class="product-price">Add</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="technical-dd" data-calendly="https://calendly.com/henry-platten/technical-dd">
+            <div class="product-option" data-service="technical-dd" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-dd-en" class="product-checkbox">
                 <label for="product-dd-en" class="product-label">
                     <div class="product-icon">🔍</div>
                     <h3>Pre-Investment Due Diligence</h3>
                     <p>Evaluate AI capability claims before capital deployment. Predict Series B technical debt.</p>
-                    <span class="product-price">£15-25K per company</span>
+                    <span class="product-price">Add</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="portfolio-counsel" data-calendly="https://calendly.com/henry-platten/ongoing-counsel">
+            <div class="product-option" data-service="portfolio-counsel" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-counsel-en" class="product-checkbox">
                 <label for="product-counsel-en" class="product-label">
                     <div class="product-icon">🎯</div>
                     <h3>Ongoing Strategic Counsel</h3>
                     <p>Monthly strategic sessions + async support for urgent portfolio decisions.</p>
-                    <span class="product-price">£200-300K annually</span>
+                    <span class="product-price">Add</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="moat-assessment" data-calendly="https://calendly.com/henry-platten/moat-assessment">
+            <div class="product-option" data-service="moat-assessment" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-moat-en" class="product-checkbox">
                 <label for="product-moat-en" class="product-label">
                     <div class="product-icon">🏰</div>
-                    <h3>Moat vs Theater Assessment</h3>
+                    <h3>Moat vs Hype Assessment</h3>
                     <p>Identify which AI investments create sustainable competitive advantage versus expensive feature theater.</p>
-                    <span class="product-price">£15-20K per company</span>
+                    <span class="product-price">Add</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="compliance-framework" data-calendly="https://calendly.com/henry-platten/compliance">
+            <div class="product-option" data-service="compliance-framework" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-compliance-en" class="product-checkbox">
                 <label for="product-compliance-en" class="product-label">
                     <div class="product-icon">⚖️</div>
-                    <h3>EU AI Act Portfolio Compliance</h3>
+                    <h3>EU AI Act/Global Legal Portfolio Compliance</h3>
                     <p>Deploy one regulatory framework across portfolio. Compliance that passes diligence without killing velocity.</p>
-                    <span class="product-price">£30-50K portfolio-wide</span>
+                    <span class="product-price"></span>
                 </label>
             </div>
         </div>
@@ -1120,7 +1120,7 @@
         </div>
         
         <div class="selection-note">
-            <p>Not sure which services fit? <a href="https://calendly.com/henry-platten/discovery-call" class="link-inline" target="_blank">Book a 20-minute discovery call</a> and we'll map your portfolio needs.</p>
+            <p>Tailor your package or like to discuss more? <a href="https://calendly.com/henryplatten/30min-meeting" class="link-inline" target="_blank">Book a 30-minute discovery call</a> and we'll map your portfolio needs.</p>
         </div>
     </div>
 </section>
@@ -1154,7 +1154,7 @@
                 <div class="step-number-circle">03</div>
                 <div class="step-content">
                     <h3>Ongoing Strategic Oversight (Monthly)</h3>
-                    <p>Embedded adviser for critical architecture decisions across portfolio. Available for board meetings, pre-investment technical due diligence, founder coaching on AI strategy. Prevent expensive mistakes before they compound. Deliverable: Monthly strategic sessions + async support for urgent decisions.</p>
+                    <p>Embedded advisor for critical architecture decisions across portfolio. Available for board meetings, pre-investment technical due diligence, founder coaching on AI strategy. Prevent expensive mistakes before they compound. Deliverable: Monthly strategic sessions + async support for urgent decisions.</p>
                 </div>
             </div>
         </div>
@@ -1166,7 +1166,7 @@
     <div class="container">
         <h2>Prevent £1.7-3.2M in Portfolio Waste</h2>
         <p class="cta-subhead">
-            Strategic counsel costs £200-300K annually. The alternative is watching 8-12 companies independently burn £400-700K each on frameworks that don't survive Series B.
+            Strategic counsel. The alternative is watching 8-12 companies independently burn £400-700K each on frameworks that don't survive Series B.
         </p>
         
         <div class="cta-box">
@@ -1345,13 +1345,13 @@
         
         <div class="proof-grid">
             <div class="proof-card">
-                <span class="proof-stat">+1 مليون</span>
-                <p>مستخدم على أنظمة الذكاء الاصطناعي التي بنيتها ووسعتها عبر 70 دولة قبل الخروج الناجح</p>
+                <span class="proof-stat">+40 مليون</span>
+                <p>رسالة على أنظمة الذكاء الاصطناعي التي بنيتها ووسعتها، بالإضافة إلى الخروج</p>
             </div>
             
             <div class="proof-card">
-                <span class="proof-stat">+150 ألف</span>
-                <p>مستخدم متزامن على منصة الذكاء الاصطناعي الإنتاجية الحالية مع الأنظمة متعددة الوسائط</p>
+                <span class="proof-stat">+20</span>
+                <p>براءات اختراع دولية وذكاء اصطناعي خاص قابل لبراءة الاختراع تم تصميمه وبناؤه وإطلاقه</p>
             </div>
             
             <div class="proof-card">
@@ -1360,15 +1360,15 @@
             </div>
             
             <div class="proof-card">
-                <span class="proof-stat">70</span>
-                <p>دولة منتشرة عبرها مع الامتثال التنظيمي في المجالات الحرجة للسلامة</p>
+                <span class="proof-stat">MIT & Harvard</span>
+                <p>تدريب في الذكاء الاصطناعي وعلوم البيانات</p>
             </div>
         </div>
         
         <div class="credentials-showcase">
             <div class="credential-row">
                 <h4>خبرة المشغل التي تقدرها شركات رأس المال الاستثماري</h4>
-                <p>شارك في تأسيس GoBubble (إدارة محتوى الذكاء الاصطناعي)، توسع من النموذج الأولي إلى 3,500+ عميل مؤسسي عبر 70 دولة، تنقل في صندوق ICO التنظيمي، ساهم في قانون التصميم المناسب للعمر، حقق خروج نقدي بالكامل في 2024. يقود حالياً الذكاء الاصطناعي في Crown Cards (150 ألف+ مستخدم متزامن، أنظمة LLM الإنتاجية، شبكات الوكيل الموزعة).</p>
+                <p>منتجات ذكاء اصطناعي متعددة تم توسيعها بنجاح من النموذج الأولي إلى العملاء المؤسسيين عبر 70 دولة، تنقل في صندوق ICO التنظيمي، ساهم في قانون التصميم المناسب للعمر، حقق عمليات خروج متعددة.</p>
             </div>
             
             <div class="credential-row">
@@ -1378,7 +1378,7 @@
             
             <div class="credential-row">
                 <h4>أدوار استشارية استراتيجية تعترف بها شركات رأس المال الاستثماري</h4>
-                <p>قائد الذكاء الاصطناعي المشارك في FSB للابتكار الرقمي (تقديم المشورة بشأن استراتيجية الذكاء الاصطناعي الوطنية للشركات الصغيرة). لجنة الحوكمة للاتحاد العالمي للرياضات الإلكترونية. أدوار استشارية متعددة في مجالس الإدارة للشركات الناشئة المركزة على الذكاء الاصطناعي. مشاركة نشطة في صندوق رأس المال الاستثماري في تقييم الاستثمارات وإرشادات شركات المحفظة الاستراتيجية.</p>
+                <p>خبرة في دعم الصناديق من إنشاء تفويض استثمار الذكاء الاصطناعي لمدة 10 سنوات (النظر في الروبوتات، والأمن السيبراني، والخدمة العامة)، إلى التوجيه الاستراتيجي لشركات المحفظة. قائد الذكاء الاصطناعي للابتكار الرقمي (تقديم المشورة بشأن استراتيجية الذكاء الاصطناعي). أدوار استشارية متعددة في مجالس الإدارة للشركات الناشئة المركزة على الذكاء الاصطناعي.</p>
             </div>
         </div>
     </div>
@@ -1391,53 +1391,53 @@
         <p class="selection-intro">اختر واحدة أو أكثر. سنخصص مراجعة محفظتنا وفقاً لذلك.</p>
         
         <div class="products-grid">
-            <div class="product-option" data-service="portfolio-diagnostic" data-calendly="https://calendly.com/henry-platten/portfolio-diagnostic">
+            <div class="product-option" data-service="portfolio-diagnostic" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-portfolio-ar" class="product-checkbox">
                 <label for="product-portfolio-ar" class="product-label">
                     <div class="product-icon">📊</div>
                     <h3>تشخيص المحفظة</h3>
                     <p>مراجعة الهندسة التقنية عبر 3-5 شركات. تحديد التعرض للمخاطر الإجمالية وعدم التوافق الاستراتيجي.</p>
-                    <span class="product-price">£25-40 ألف</span>
+                    <span class="product-price">إضافة</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="technical-dd" data-calendly="https://calendly.com/henry-platten/technical-dd">
+            <div class="product-option" data-service="technical-dd" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-dd-ar" class="product-checkbox">
                 <label for="product-dd-ar" class="product-label">
                     <div class="product-icon">🔍</div>
                     <h3>العناية الواجبة التقنية قبل الاستثمار</h3>
                     <p>تقييم ادعاءات قدرات الذكاء الاصطناعي قبل نشر رأس المال. التنبؤ بالديون التقنية للسلسلة B.</p>
-                    <span class="product-price">£15-25 ألف لكل شركة</span>
+                    <span class="product-price">إضافة</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="portfolio-counsel" data-calendly="https://calendly.com/henry-platten/ongoing-counsel">
+            <div class="product-option" data-service="portfolio-counsel" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-counsel-ar" class="product-checkbox">
                 <label for="product-counsel-ar" class="product-label">
                     <div class="product-icon">🎯</div>
                     <h3>المشورة الاستراتيجية المستمرة</h3>
                     <p>جلسات استراتيجية شهرية + دعم غير متزامن للقرارات العاجلة للمحفظة.</p>
-                    <span class="product-price">£200-300 ألف سنوياً</span>
+                    <span class="product-price">إضافة</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="moat-assessment" data-calendly="https://calendly.com/henry-platten/moat-assessment">
+            <div class="product-option" data-service="moat-assessment" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-moat-ar" class="product-checkbox">
                 <label for="product-moat-ar" class="product-label">
                     <div class="product-icon">🏰</div>
-                    <h3>تقييم الخندق مقابل المسرح</h3>
+                    <h3>تقييم الخندق مقابل الضجيج</h3>
                     <p>تحديد استثمارات الذكاء الاصطناعي التي تخلق ميزة تنافسية مستدامة مقابل مسرح الميزات المكلفة.</p>
-                    <span class="product-price">£15-20 ألف لكل شركة</span>
+                    <span class="product-price">إضافة</span>
                 </label>
             </div>
             
-            <div class="product-option" data-service="compliance-framework" data-calendly="https://calendly.com/henry-platten/compliance">
+            <div class="product-option" data-service="compliance-framework" data-calendly="https://calendly.com/henryplatten/30min-meeting">
                 <input type="checkbox" id="product-compliance-ar" class="product-checkbox">
                 <label for="product-compliance-ar" class="product-label">
                     <div class="product-icon">⚖️</div>
-                    <h3>امتثال المحفظة لقانون الذكاء الاصطناعي الأوروبي</h3>
+                    <h3>امتثال المحفظة لقانون الذكاء الاصطناعي الأوروبي/القانون العالمي</h3>
                     <p>نشر إطار تنظيمي واحد عبر المحفظة. الامتثال الذي يمرر العناية الواجبة دون قتل السرعة.</p>
-                    <span class="product-price">£30-50 ألف على مستوى المحفظة</span>
+                    <span class="product-price"></span>
                 </label>
             </div>
         </div>
@@ -1449,7 +1449,7 @@
         </div>
         
         <div class="selection-note">
-            <p>غير متأكد من الخدمات المناسبة؟ <a href="https://calendly.com/henry-platten/discovery-call" class="link-inline" target="_blank">احجز مكالمة اكتشاف مدتها 20 دقيقة</a> وسنرسم احتياجات محفظتك.</p>
+            <p>تخصيص الباقة الخاصة بك أو ترغب في مناقشة المزيد؟ <a href="https://calendly.com/henryplatten/30min-meeting" class="link-inline" target="_blank">احجز مكالمة اكتشاف مدتها 30 دقيقة</a> وسنرسم احتياجات محفظتك.</p>
         </div>
     </div>
 </section>
@@ -1495,7 +1495,7 @@
     <div class="container">
         <h2>منع £1.7-3.2 مليون من هدر المحفظة</h2>
         <p class="cta-subhead">
-            المشورة الاستراتيجية تكلف £200-300 ألف سنوياً. البديل هو مشاهدة 8-12 شركة تحرق بشكل مستقل £400-700 ألف لكل منها على الأطر التي لا تنجو من السلسلة B.
+            المشورة الاستراتيجية. البديل هو مشاهدة 8-12 شركة تحرق بشكل مستقل £400-700 ألف لكل منها على الأطر التي لا تنجو من السلسلة B.
         </p>
         
         <div class="cta-box">
