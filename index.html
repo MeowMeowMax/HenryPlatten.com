@@ -895,10 +895,293 @@
                 height: 95%;
             }
         }
+            /* FOOTER */
+            .site-footer {
+                background: #1a1a2e;
+                color: white;
+                padding: 60px 0 30px;
+                margin-top: 80px;
+            }
+            
+            .footer-content {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+                margin-bottom: 40px;
+            }
+            
+            .footer-section h3 {
+                font-size: 18px;
+                font-weight: 700;
+                margin-bottom: 16px;
+                color: #0d6efd;
+            }
+            
+            .footer-section p {
+                font-size: 14px;
+                line-height: 1.8;
+                opacity: 0.9;
+            }
+            
+            .footer-links {
+                list-style: none;
+                padding: 0;
+            }
+            
+            .footer-links li {
+                margin-bottom: 12px;
+            }
+            
+            .footer-links a {
+                color: white;
+                text-decoration: none;
+                font-size: 14px;
+                opacity: 0.9;
+                transition: opacity 0.3s ease;
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+            }
+            
+            .footer-links a:hover {
+                opacity: 1;
+                color: #0d6efd;
+            }
+            
+            .footer-bottom {
+                border-top: 1px solid rgba(255,255,255,0.1);
+                padding-top: 24px;
+                text-align: center;
+                font-size: 14px;
+                opacity: 0.8;
+            }
+            
+            /* WHATSAPP FLOATING BUTTON */
+            .whatsapp-float {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                background: #25D366;
+                color: white;
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 32px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                cursor: pointer;
+                z-index: 9999;
+                transition: all 0.3s ease;
+                text-decoration: none;
+            }
+            
+            .whatsapp-float:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+            }
+            
+            .whatsapp-tooltip {
+                position: absolute;
+                right: 70px;
+                top: 50%;
+                transform: translateY(-50%);
+                background: white;
+                color: #212529;
+                padding: 12px 16px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: 600;
+                white-space: nowrap;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.3s ease;
+            }
+            
+            .whatsapp-float:hover .whatsapp-tooltip {
+                opacity: 1;
+            }
+            
+            /* REPORT DOWNLOAD MODAL */
+            .report-modal {
+                display: none;
+                position: fixed;
+                z-index: 10001;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+            
+            .report-modal-content {
+                background-color: #ffffff;
+                margin: 3% auto;
+                padding: 0;
+                width: 90%;
+                max-width: 600px;
+                border-radius: 16px;
+                box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .report-modal-close {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                color: #fff;
+                background: #dc3545;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 24px;
+                font-weight: bold;
+                cursor: pointer;
+                z-index: 1;
+                transition: all 0.3s ease;
+            }
+            
+            .report-modal-close:hover {
+                background: #bb2d3b;
+                transform: scale(1.1);
+            }
+            
+            .report-modal-header {
+                background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+                color: white;
+                padding: 40px;
+                text-align: center;
+            }
+            
+            .report-modal-header h2 {
+                font-size: 28px;
+                font-weight: 800;
+                margin-bottom: 12px;
+            }
+            
+            .report-modal-header p {
+                font-size: 16px;
+                opacity: 0.9;
+            }
+            
+            .report-form {
+                padding: 40px;
+            }
+            
+            .form-group {
+                margin-bottom: 24px;
+            }
+            
+            .form-group label {
+                display: block;
+                font-weight: 600;
+                margin-bottom: 8px;
+                color: #212529;
+                font-size: 15px;
+            }
+            
+            .form-group input {
+                width: 100%;
+                padding: 12px 16px;
+                border: 2px solid #dee2e6;
+                border-radius: 8px;
+                font-size: 16px;
+                transition: border-color 0.3s ease;
+                font-family: inherit;
+            }
+            
+            .form-group input:focus {
+                outline: none;
+                border-color: #0d6efd;
+            }
+            
+            .form-checkbox {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                margin-bottom: 24px;
+            }
+            
+            .form-checkbox input[type="checkbox"] {
+                margin-top: 4px;
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                flex-shrink: 0;
+            }
+            
+            .form-checkbox label {
+                font-size: 14px;
+                line-height: 1.6;
+                color: #495057;
+                cursor: pointer;
+            }
+            
+            .btn-download-report {
+                width: 100%;
+                background: #0d6efd;
+                color: white;
+                padding: 16px;
+                border: none;
+                border-radius: 8px;
+                font-size: 18px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .btn-download-report:hover:not(:disabled) {
+                background: #0b5ed7;
+                transform: translateY(-2px);
+            }
+            
+            .btn-download-report:disabled {
+                background: #6c757d;
+                cursor: not-allowed;
+            }
+            
+            .report-success {
+                display: none;
+                padding: 60px 40px;
+                text-align: center;
+            }
+            
+            .report-success.active {
+                display: block;
+            }
+            
+            .success-icon {
+                width: 80px;
+                height: 80px;
+                background: #198754;
+                color: white;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 48px;
+                margin: 0 auto 24px;
+            }
+            
+            .report-success h3 {
+                font-size: 28px;
+                font-weight: 800;
+                margin-bottom: 16px;
+            }
+            
+            .report-success p {
+                font-size: 16px;
+                color: #495057;
+                line-height: 1.6;
+            }
     </style>
 </head>
-<body>
-
 <body>
 
 <!-- SITE HEADER -->
@@ -1059,7 +1342,7 @@
                     <div class="checkmark">✓</div>
                     <div class="icon">📊</div>
                     <h3>Portfolio-Level AI Risk Management</h3>
-                    <p>Prevent £1.7-3.2M aggregate runway waste across 8-12 portfolio companies.</p>
+                    <p>Prevent upto £3.2M aggregate runway waste across 8-12 portfolio companies.</p>
                 </div>
                 
                 <div class="support-card">
@@ -1341,7 +1624,110 @@
         </div>
     </div>
 </section>
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="#" class="whatsapp-float" onclick="openWhatsApp(event)" title="Message us on WhatsApp">
+    <span class="whatsapp-tooltip">Chat with us on WhatsApp</span>
+    <span>💬</span>
+</a>
 
+<!-- REPORT DOWNLOAD MODAL -->
+<div id="reportModal" class="report-modal">
+    <div class="report-modal-content">
+        <span class="report-modal-close" onclick="closeReportModal()">×</span>
+        
+        <div class="report-modal-header">
+            <h2>Download: The AI Strategy Gap</h2>
+            <p>Why McKinsey's State of AI Will Bankrupt Your Series A Company</p>
+        </div>
+        
+        <div id="reportFormContainer">
+            <form id="reportDownloadForm" class="report-form" onsubmit="handleReportSubmit(event)">
+                <div class="form-group">
+                    <label for="report-name">Full Name *</label>
+                    <input type="text" id="report-name" name="name" required placeholder="John Smith">
+                </div>
+                
+                <div class="form-group">
+                    <label for="report-email">Email Address *</label>
+                    <input type="email" id="report-email" name="email" required placeholder="john@company.com">
+                </div>
+                
+                <div class="form-group">
+                    <label for="report-org">Organisation</label>
+                    <input type="text" id="report-org" name="organisation" placeholder="Company Name or VC Fund">
+                </div>
+                
+                <div class="form-checkbox">
+                    <input type="checkbox" id="marketing-consent" name="marketing_consent">
+                    <label for="marketing-consent">
+                        I'd like to receive strategic insights on AI. You can unsubscribe anytime.
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-download-report">
+                    Download Report Now →
+                </button>
+                
+                <p style="text-align: center; margin-top: 16px; font-size: 13px; color: #6c757d;">
+                    Your download will start automatically after submission.
+                </p>
+            </form>
+        </div>
+        
+        <div id="reportSuccess" class="report-success">
+            <div class="success-icon">✓</div>
+            <h3>Success!</h3>
+            <p>Your report download should start automatically. Check your email for a copy.</p>
+            <button onclick="closeReportModal()" style="margin-top: 24px; padding: 12px 32px; background: #f8f9fa; border: 2px solid #dee2e6; border-radius: 8px; font-weight: 600; cursor: pointer;">Close</button>
+        </div>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                    <img src="ai_snaps_logo.jpg" alt="AI Snaps" style="width: 40px; height: 40px;">
+                    <h3 style="margin: 0;">AI Snaps</h3>
+                </div>
+                <p>Strategic AI advisory for VCs and Series A/B founders. Prevent £400-700K in wasted technical spend through operator-tested strategic counsel.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Connect</h3>
+                <ul class="footer-links">
+                    <li>
+                        <a href="https://www.linkedin.com/in/henryplatten" target="_blank" rel="noopener">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            Henry Platten (Personal)
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/company/ai-snaps" target="_blank" rel="noopener">
+                            <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            AI Snaps (Company)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Resources</h3>
+                <ul class="footer-links">
+                    <li><a href="#" onclick="openReportModal(event)">📄 Download McKinsey Report</a></li>
+                    <li><a href="https://calendly.com/henryplatten/30min-meeting" target="_blank">📅 Book Strategy Call</a></li>
+                    <li><a href="#funnel">🎯 Get Started</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; AI Snaps (2025). All rights reserved.</p>
+        </div>
+    </div>
+</footer>
 <script>
 // Global variables
 let selectedServices = [];
@@ -1514,7 +1900,137 @@ window.addEventListener('message', function(e) {
         }
     }
 });
-</script>
+    // WhatsApp functionality (with anti-spam protection)
+function openWhatsApp(event) {
+    event.preventDefault();
+    
+    const countryCode = '44';
+    const number = '7565704080';
+    const message = encodeURIComponent('Hi, I found your website and would like to discuss AI strategy.');
+    const whatsappURL = `https://wa.me/${countryCode}${number}?text=${message}`;
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'whatsapp_click', {
+            'event_category': 'contact',
+            'event_label': 'floating_button'
+        });
+    }
+    
+    window.open(whatsappURL, '_blank');
+}
 
+// Report Modal Functions
+function openReportModal(event) {
+    event.preventDefault();
+    document.getElementById('reportModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'report_modal_opened', {
+            'event_category': 'lead_generation',
+            'event_label': 'mckenzie_report'
+        });
+    }
+}
+
+function closeReportModal() {
+    document.getElementById('reportModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+    document.getElementById('reportDownloadForm').reset();
+    document.getElementById('reportFormContainer').style.display = 'block';
+    document.getElementById('reportSuccess').classList.remove('active');
+}
+
+// Report Form Submission
+function handleReportSubmit(event) {
+    event.preventDefault();
+    
+    const formData = {
+        name: document.getElementById('report-name').value,
+        email: document.getElementById('report-email').value,
+        organisation: document.getElementById('report-org').value || 'Not provided',
+        marketing_consent: document.getElementById('marketing-consent').checked ? 'Yes' : 'No',
+        timestamp: new Date().toISOString(),
+        source: 'McKinsey Report Download'
+    };
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'report_download_submitted', {
+            'event_category': 'lead_generation',
+            'event_label': 'form_completed',
+            'marketing_consent': formData.marketing_consent
+        });
+    }
+    
+    console.log('Report download data:', formData);
+    
+    document.getElementById('reportFormContainer').style.display = 'none';
+    document.getElementById('reportSuccess').classList.add('active');
+    
+    const reportUrl = '/reports/McKinsey-AI-Strategy-Gap-Report.pdf';
+    window.open(reportUrl, '_blank');
+    
+    if (typeof gtag !== 'undefined') {
+        gtag('event', 'report_downloaded', {
+            'event_category': 'conversion',
+            'event_label': 'mckenzie_report_success'
+        });
+    }
+}  // <- YOU WERE MISSING THIS CLOSING BRACE FOR handleReportSubmit()
+
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const headerCTA = document.querySelector('.header-cta');
+    
+    // Check if mobile menu already exists
+    let mobileMenu = document.getElementById('mobileMenu');
+    
+    if (!mobileMenu) {
+        // Create mobile menu
+        mobileMenu = document.createElement('div');
+        mobileMenu.id = 'mobileMenu';
+        mobileMenu.style.cssText = `
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 24px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 999;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        `;
+        
+        mobileMenu.innerHTML = `
+            <a href="#" onclick="openReportModal(event); toggleMobileMenu();" class="btn-header btn-header-secondary" style="text-align: center; display: block; padding: 12px;">
+                📄 Download Report
+            </a>
+            <a href="https://calendly.com/henryplatten/30min-meeting" target="_blank" class="btn-header btn-header-primary" style="text-align: center; display: block; padding: 12px;">
+                Book a Call
+            </a>
+            <a href="#funnel" onclick="scrollToFunnel(); toggleMobileMenu();" class="btn-header btn-header-secondary" style="text-align: center; display: block; padding: 12px;">
+                🎯 Get Started
+            </a>
+        `;
+        
+        document.body.appendChild(mobileMenu);
+        document.body.style.overflow = 'hidden';
+    } else {
+        // Remove mobile menu
+        mobileMenu.remove();
+        document.body.style.overflow = 'auto';
+    }
+}
+
+// Close report modal when clicking outside
+window.addEventListener('click', function(event) {
+    const reportModal = document.getElementById('reportModal');
+    if (event.target === reportModal) {
+        closeReportModal();
+    }
+});
+</script>
 </body>
 </html>
